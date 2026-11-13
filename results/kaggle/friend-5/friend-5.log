@@ -1,0 +1,255 @@
+[{"stream_name":"stderr","time":6.765316437,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.765390908,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.765397915,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.765401362,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.331149889,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.331203544,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.331209847,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.331213942,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":29.709898147,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":29.709936458,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.709942531,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.709946788,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.709950802,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":32.203800539,"data":"\u001b[0mvec2vec commit 5efb3c02ee908847581c6488cf9c8ed6dace3c29 Mon May 25 16:11:29 2026 -0400\r\n"}
+,{"stream_name":"stdout","time":38.059950376,"data":"GPU 0: native1000k_s5   budget 10.0 h\n"}
+,{"stream_name":"stdout","time":38.05998722,"data":"GPU 1: native50k_s5   budget 10.0 h\n"}
+,{"stream_name":"stdout","time":38.073866683,"data":"- random guess: top-1 = 1/8,192 = 0.00012, average rank = 4,096 (ours / dpr_matched); authors' top-1 within 1,024 = 0.001 (native)\n"}
+,{"stream_name":"stdout","time":38.073893429,"data":"- steps per epoch: ours 195, dpr_matched 390, native-1M 3,906, native-50k 195 (batch 256)\n"}
+,{"stream_name":"stdout","time":38.074119713,"data":"- minutes per epoch on a T4: ours about 0.7-2 (unknown before this run; the workstation needed 0.66 with two runs sharing a faster GPU); native much longer because it also runs two text encoders\n"}
+,{"stream_name":"stdout","time":38.074135365,"data":"- training steps in 10.5 h: ours roughly 60,000-180,000. Our first run had only 19,000. The paper reports seeds that converged within 10 epochs of 1M points, about 39,000 steps\n"}
+,{"stream_name":"stdout","time":38.074140705,"data":"- LEARNED (ours, dpr_matched): top-1 \u003e= 0.01 (80x random) OR average rank \u003c= a quarter of random (1,024 of 8,192) at any epoch\n"}
+,{"stream_name":"stdout","time":38.074146176,"data":"- LEARNED (native): authors' validation top-1 (within 1,024) \u003e= 0.1 at any epoch\n"}
+,{"stream_name":"stdout","time":38.074151311,"data":"- chance that at least one of our 8 seeds learns (6 here + 2 on the workstation): unknown. If each seed had the paper's cross-backbone rate (e5-\u003egtr: 3 of 15 seeds), about 1 - 0.8^8 = 0.83. The paper also reports gte-\u003egtr failing without per-pair tuning, so zero is a real possibility and would itself be a result\n"}
+,{"stream_name":"stdout","time":38.074168353,"data":"- native-1M (positive control): should learn: it is the authors' own pair and pipeline. If it does not, the budget per run is too short and a failure of our pair is inconclusive\n"}
+,{"stream_name":"stdout","time":38.074173017,"data":"- native-50k vs native-1M: if 1M learns and 50k does not, too little data is the problem (Aman's hypothesis)\n"}
+,{"stream_name":"stdout","time":38.074176796,"data":"- dpr_matched vs ours: if dpr_matched learns and ours does not, more / matched victim-side data helps\n"}
+,{"stream_name":"stdout","time":38.090721701,"data":"Writing /kaggle/working/code/v2v_runner.py\n"}
+,{"stream_name":"stdout","time":38.104296734,"data":"Writing /kaggle/working/code/v2v_job.py\n"}
+,{"stream_name":"stderr","time":62.30828796,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":62.30832484,"data":"I0000 00:00:1794002039.862387      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":62.513971626,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":62.51400038,"data":"I0000 00:00:1794002039.862387      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":62.514005528,"data":"\n"}
+,{"stream_name":"stderr","time":62.514008976,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":62.514012473,"data":"I0000 00:00:1794002039.862387      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":113.73958148,"data":"WARNING:sentence_transformers.SentenceTransformer:No sentence-transformers model found with name infgrad/stella-base-en-v2. Creating a new one with mean pooling.\n"}
+,{"stream_name":"stderr","time":113.739625167,"data":"\n"}
+,{"stream_name":"stderr","time":113.739631291,"data":"WARNING:sentence_transformers.SentenceTransformer:No sentence-transformers model found with name infgrad/stella-base-en-v2. Creating a new one with mean pooling.\n"}
+,{"stream_name":"stdout","time":113.847693897,"data":"NQ DPR corpus: 5,332,023 passages (46s)\n"}
+,{"stream_name":"stdout","time":123.667809117,"data":"downloaded infgrad/stella-base-en-v2\n"}
+,{"stream_name":"stdout","time":127.392938631,"data":"downloaded thenlper/gte-base\n"}
+,{"stream_name":"stdout","time":847.634342757,"data":"--- 0.17 h since start\n"}
+,{"stream_name":"stdout","time":847.634410392,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":847.634416407,"data":"  native50k_s5             running          epoch 1  0.12 h  authors' top-1 0.0005\n"}
+,{"stream_name":"stdout","time":1447.637760483,"data":"--- 0.33 h since start\n"}
+,{"stream_name":"stdout","time":1447.637801675,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":1447.637807863,"data":"  native50k_s5             running          epoch 2  0.24 h  authors' top-1 0.0007\n"}
+,{"stream_name":"stdout","time":2047.630490235,"data":"--- 0.50 h since start\n"}
+,{"stream_name":"stdout","time":2047.630525988,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":2047.630531325,"data":"  native50k_s5             running          epoch 4  0.49 h  authors' top-1 0.0005\n"}
+,{"stream_name":"stdout","time":2647.639229236,"data":"--- 0.67 h since start\n"}
+,{"stream_name":"stdout","time":2647.639278867,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":2647.639284296,"data":"  native50k_s5             running          epoch 5  0.62 h  authors' top-1 0.0010\n"}
+,{"stream_name":"stdout","time":3247.636238742,"data":"--- 0.83 h since start\n"}
+,{"stream_name":"stdout","time":3247.636295018,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":3247.636300888,"data":"  native50k_s5             running          epoch 6  0.74 h  authors' top-1 0.0010\n"}
+,{"stream_name":"stdout","time":3847.635490833,"data":"--- 1.00 h since start\n"}
+,{"stream_name":"stdout","time":3847.63553513,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":3847.635542609,"data":"  native50k_s5             running          epoch 8  0.99 h  authors' top-1 0.0005\n"}
+,{"stream_name":"stdout","time":4447.636441271,"data":"--- 1.17 h since start\n"}
+,{"stream_name":"stdout","time":4447.636483568,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":4447.636489115,"data":"  native50k_s5             running          epoch 9  1.12 h  authors' top-1 0.0012\n"}
+,{"stream_name":"stdout","time":5047.639944092,"data":"--- 1.33 h since start\n"}
+,{"stream_name":"stdout","time":5047.640005453,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":5047.640014197,"data":"  native50k_s5             running          epoch 10  1.24 h  authors' top-1 0.0024\n"}
+,{"stream_name":"stdout","time":5647.641624092,"data":"--- 1.50 h since start\n"}
+,{"stream_name":"stdout","time":5647.641686701,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":5647.641693635,"data":"  native50k_s5             running          epoch 12  1.49 h  authors' top-1 0.0015\n"}
+,{"stream_name":"stdout","time":6247.651731523,"data":"--- 1.67 h since start\n"}
+,{"stream_name":"stdout","time":6247.651768106,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":6247.651773862,"data":"  native50k_s5             running          epoch 13  1.62 h  authors' top-1 0.0007\n"}
+,{"stream_name":"stdout","time":6847.654891544,"data":"--- 1.83 h since start\n"}
+,{"stream_name":"stdout","time":6847.654932969,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":6847.654938568,"data":"  native50k_s5             running          epoch 14  1.74 h  authors' top-1 0.0015\n"}
+,{"stream_name":"stdout","time":7447.650301562,"data":"--- 2.00 h since start\n"}
+,{"stream_name":"stdout","time":7447.650344559,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":7447.650349999,"data":"  native50k_s5             running          epoch 16  1.99 h  authors' top-1 0.0010\n"}
+,{"stream_name":"stdout","time":8047.649386517,"data":"--- 2.17 h since start\n"}
+,{"stream_name":"stdout","time":8047.649647159,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":8047.649829666,"data":"  native50k_s5             running          epoch 17  2.12 h  authors' top-1 0.0007\n"}
+,{"stream_name":"stdout","time":8647.650896099,"data":"--- 2.33 h since start\n"}
+,{"stream_name":"stdout","time":8647.65094709,"data":"  native1000k_s5           running          setting up / first epoch\n"}
+,{"stream_name":"stdout","time":8647.650952756,"data":"  native50k_s5             running          epoch 18  2.24 h  authors' top-1 0.0010\n"}
+,{"stream_name":"stdout","time":9247.661409698,"data":"--- 2.50 h since start\n"}
+,{"stream_name":"stdout","time":9247.661484494,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":9247.661489805,"data":"  native50k_s5             running          epoch 20  2.49 h  authors' top-1 0.0022\n"}
+,{"stream_name":"stdout","time":9847.65606813,"data":"--- 2.67 h since start\n"}
+,{"stream_name":"stdout","time":9847.656114013,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":9847.656119573,"data":"  native50k_s5             running          epoch 21  2.62 h  authors' top-1 0.0017\n"}
+,{"stream_name":"stdout","time":10447.660005178,"data":"--- 2.83 h since start\n"}
+,{"stream_name":"stdout","time":10447.660075556,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":10447.660083026,"data":"  native50k_s5             running          epoch 22  2.74 h  authors' top-1 0.0012\n"}
+,{"stream_name":"stdout","time":11047.66394542,"data":"--- 3.00 h since start\n"}
+,{"stream_name":"stdout","time":11047.663989362,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":11047.663994824,"data":"  native50k_s5             running          epoch 24  2.99 h  authors' top-1 0.0022\n"}
+,{"stream_name":"stdout","time":11647.674653879,"data":"--- 3.17 h since start\n"}
+,{"stream_name":"stdout","time":11647.674733713,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":11647.674740283,"data":"  native50k_s5             running          epoch 25  3.12 h  authors' top-1 0.0029\n"}
+,{"stream_name":"stdout","time":12247.669443783,"data":"--- 3.33 h since start\n"}
+,{"stream_name":"stdout","time":12247.669522345,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":12247.669528648,"data":"  native50k_s5             running          epoch 26  3.24 h  authors' top-1 0.0024\n"}
+,{"stream_name":"stdout","time":12847.673428996,"data":"--- 3.50 h since start\n"}
+,{"stream_name":"stdout","time":12847.673477862,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":12847.673483364,"data":"  native50k_s5             running          epoch 28  3.50 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":13447.677199183,"data":"--- 3.67 h since start\n"}
+,{"stream_name":"stdout","time":13447.677241775,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":13447.677248749,"data":"  native50k_s5             running          epoch 29  3.62 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":14047.678420621,"data":"--- 3.83 h since start\n"}
+,{"stream_name":"stdout","time":14047.678458388,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":14047.678463814,"data":"  native50k_s5             running          epoch 30  3.75 h  authors' top-1 0.0049\n"}
+,{"stream_name":"stdout","time":14647.683618488,"data":"--- 4.00 h since start\n"}
+,{"stream_name":"stdout","time":14647.683655836,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":14647.683673528,"data":"  native50k_s5             running          epoch 32  4.00 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":15247.687369732,"data":"--- 4.17 h since start\n"}
+,{"stream_name":"stdout","time":15247.687408023,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":15247.68742036,"data":"  native50k_s5             running          epoch 33  4.12 h  authors' top-1 0.0044\n"}
+,{"stream_name":"stdout","time":15847.68905987,"data":"--- 4.33 h since start\n"}
+,{"stream_name":"stdout","time":15847.689109883,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":15847.689115643,"data":"  native50k_s5             running          epoch 34  4.25 h  authors' top-1 0.0042\n"}
+,{"stream_name":"stdout","time":16447.69225892,"data":"--- 4.50 h since start\n"}
+,{"stream_name":"stdout","time":16447.69230301,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":16447.692308735,"data":"  native50k_s5             running          epoch 36  4.50 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":17047.706965242,"data":"--- 4.67 h since start\n"}
+,{"stream_name":"stdout","time":17047.70700509,"data":"  native1000k_s5           running          epoch 1  2.37 h  authors' top-1 0.0020\n"}
+,{"stream_name":"stdout","time":17047.707010667,"data":"  native50k_s5             running          epoch 37  4.62 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":17647.700821882,"data":"--- 4.83 h since start\n"}
+,{"stream_name":"stdout","time":17647.700879841,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":17647.700886713,"data":"  native50k_s5             running          epoch 38  4.75 h  authors' top-1 0.0061\n"}
+,{"stream_name":"stdout","time":18247.703701244,"data":"--- 5.00 h since start\n"}
+,{"stream_name":"stdout","time":18247.703741271,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":18247.703746865,"data":"  native50k_s5             running          epoch 40  5.00 h  authors' top-1 0.0066\n"}
+,{"stream_name":"stdout","time":18847.706984198,"data":"--- 5.17 h since start\n"}
+,{"stream_name":"stdout","time":18847.707022195,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":18847.707027499,"data":"  native50k_s5             running          epoch 41  5.12 h  authors' top-1 0.0056\n"}
+,{"stream_name":"stdout","time":19447.711151914,"data":"--- 5.33 h since start\n"}
+,{"stream_name":"stdout","time":19447.711201463,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":19447.711206818,"data":"  native50k_s5             running          epoch 42  5.25 h  authors' top-1 0.0071\n"}
+,{"stream_name":"stdout","time":20047.716623866,"data":"--- 5.50 h since start\n"}
+,{"stream_name":"stdout","time":20047.716683378,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":20047.716691061,"data":"  native50k_s5             running          epoch 44  5.50 h  authors' top-1 0.0073\n"}
+,{"stream_name":"stdout","time":20647.727734917,"data":"--- 5.67 h since start\n"}
+,{"stream_name":"stdout","time":20647.727770396,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":20647.727775878,"data":"  native50k_s5             running          epoch 45  5.62 h  authors' top-1 0.0066\n"}
+,{"stream_name":"stdout","time":21247.72293872,"data":"--- 5.83 h since start\n"}
+,{"stream_name":"stdout","time":21247.722973712,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":21247.722986135,"data":"  native50k_s5             running          epoch 46  5.75 h  authors' top-1 0.0088\n"}
+,{"stream_name":"stdout","time":21847.726391005,"data":"--- 6.00 h since start\n"}
+,{"stream_name":"stdout","time":21847.726640288,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":21847.728118121,"data":"  native50k_s5             running          epoch 48  6.00 h  authors' top-1 0.0083\n"}
+,{"stream_name":"stdout","time":22447.729684285,"data":"--- 6.17 h since start\n"}
+,{"stream_name":"stdout","time":22447.729731013,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":22447.729736628,"data":"  native50k_s5             running          epoch 49  6.12 h  authors' top-1 0.0095\n"}
+,{"stream_name":"stdout","time":23047.746585623,"data":"--- 6.33 h since start\n"}
+,{"stream_name":"stdout","time":23047.74663413,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":23047.746640194,"data":"  native50k_s5             running          epoch 50  6.25 h  authors' top-1 0.0085\n"}
+,{"stream_name":"stdout","time":23647.742434861,"data":"--- 6.50 h since start\n"}
+,{"stream_name":"stdout","time":23647.742489914,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":23647.742495831,"data":"  native50k_s5             running          epoch 52  6.50 h  authors' top-1 0.0085\n"}
+,{"stream_name":"stdout","time":24247.745740595,"data":"--- 6.67 h since start\n"}
+,{"stream_name":"stdout","time":24247.745783624,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":24247.745789154,"data":"  native50k_s5             running          epoch 53  6.63 h  authors' top-1 0.0085\n"}
+,{"stream_name":"stdout","time":24847.754387215,"data":"--- 6.83 h since start\n"}
+,{"stream_name":"stdout","time":24847.754453554,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":24847.754459811,"data":"  native50k_s5             running          epoch 54  6.76 h  authors' top-1 0.0078\n"}
+,{"stream_name":"stdout","time":25447.752603707,"data":"--- 7.00 h since start\n"}
+,{"stream_name":"stdout","time":25447.75277981,"data":"  native1000k_s5           running          epoch 2  4.75 h  authors' top-1 0.0039\n"}
+,{"stream_name":"stdout","time":25447.754112014,"data":"  native50k_s5             running          epoch 56  7.01 h  authors' top-1 0.0098\n"}
+,{"stream_name":"stdout","time":26047.753939788,"data":"--- 7.17 h since start\n"}
+,{"stream_name":"stdout","time":26047.75398888,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":26047.753995123,"data":"  native50k_s5             running          epoch 57  7.13 h  authors' top-1 0.0076\n"}
+,{"stream_name":"stdout","time":26647.768842687,"data":"--- 7.33 h since start\n"}
+,{"stream_name":"stdout","time":26647.768902848,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":26647.768909031,"data":"  native50k_s5             running          epoch 58  7.26 h  authors' top-1 0.0081\n"}
+,{"stream_name":"stdout","time":27247.771757621,"data":"--- 7.50 h since start\n"}
+,{"stream_name":"stdout","time":27247.771809372,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":27247.771840324,"data":"  native50k_s5             running          epoch 59  7.39 h  authors' top-1 0.0078\n"}
+,{"stream_name":"stdout","time":27847.786757567,"data":"--- 7.67 h since start\n"}
+,{"stream_name":"stdout","time":27847.786797396,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":27847.786804151,"data":"  native50k_s5             running          epoch 61  7.64 h  authors' top-1 0.0076\n"}
+,{"stream_name":"stdout","time":28447.777164299,"data":"--- 7.83 h since start\n"}
+,{"stream_name":"stdout","time":28447.777221492,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":28447.77722749,"data":"  native50k_s5             running          epoch 62  7.77 h  authors' top-1 0.0095\n"}
+,{"stream_name":"stdout","time":29047.781854322,"data":"--- 8.00 h since start\n"}
+,{"stream_name":"stdout","time":29047.781942048,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":29047.781949029,"data":"  native50k_s5             running          epoch 63  7.89 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":29647.801904327,"data":"--- 8.17 h since start\n"}
+,{"stream_name":"stdout","time":29647.801964549,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":29647.801971764,"data":"  native50k_s5             running          epoch 65  8.15 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":30247.790522876,"data":"--- 8.33 h since start\n"}
+,{"stream_name":"stdout","time":30247.790564482,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":30247.790570079,"data":"  native50k_s5             running          epoch 66  8.27 h  authors' top-1 0.0085\n"}
+,{"stream_name":"stdout","time":30847.796433534,"data":"--- 8.50 h since start\n"}
+,{"stream_name":"stdout","time":30847.796470637,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":30847.796476039,"data":"  native50k_s5             running          epoch 67  8.40 h  authors' top-1 0.0088\n"}
+,{"stream_name":"stdout","time":31447.808556675,"data":"--- 8.67 h since start\n"}
+,{"stream_name":"stdout","time":31447.808627552,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":31447.808633745,"data":"  native50k_s5             running          epoch 69  8.65 h  authors' top-1 0.0078\n"}
+,{"stream_name":"stdout","time":32047.803927406,"data":"--- 8.83 h since start\n"}
+,{"stream_name":"stdout","time":32047.803964456,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":32047.80396996,"data":"  native50k_s5             running          epoch 70  8.77 h  authors' top-1 0.0083\n"}
+,{"stream_name":"stdout","time":32647.809065124,"data":"--- 9.00 h since start\n"}
+,{"stream_name":"stdout","time":32647.809103803,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":32647.809109724,"data":"  native50k_s5             running          epoch 71  8.90 h  authors' top-1 0.0085\n"}
+,{"stream_name":"stdout","time":33247.81349456,"data":"--- 9.17 h since start\n"}
+,{"stream_name":"stdout","time":33247.813543065,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":33247.81354847,"data":"  native50k_s5             running          epoch 73  9.16 h  authors' top-1 0.0081\n"}
+,{"stream_name":"stdout","time":33847.818432687,"data":"--- 9.33 h since start\n"}
+,{"stream_name":"stdout","time":33847.818464979,"data":"  native1000k_s5           running          epoch 3  7.13 h  authors' top-1 0.0037\n"}
+,{"stream_name":"stdout","time":33847.818470692,"data":"  native50k_s5             running          epoch 74  9.28 h  authors' top-1 0.0093\n"}
+,{"stream_name":"stdout","time":34447.840724247,"data":"--- 9.50 h since start\n"}
+,{"stream_name":"stdout","time":34447.840815641,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":34447.840822811,"data":"  native50k_s5             running          epoch 75  9.41 h  authors' top-1 0.0076\n"}
+,{"stream_name":"stdout","time":35047.828267402,"data":"--- 9.67 h since start\n"}
+,{"stream_name":"stdout","time":35047.828299778,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":35047.828305366,"data":"  native50k_s5             running          epoch 77  9.66 h  authors' top-1 0.0076\n"}
+,{"stream_name":"stdout","time":35647.832759504,"data":"--- 9.83 h since start\n"}
+,{"stream_name":"stdout","time":35647.832801519,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":35647.832807312,"data":"  native50k_s5             running          epoch 78  9.79 h  authors' top-1 0.0076\n"}
+,{"stream_name":"stdout","time":36247.846775619,"data":"--- 10.00 h since start\n"}
+,{"stream_name":"stdout","time":36247.846837135,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":36247.846845296,"data":"  native50k_s5             running          epoch 79  9.92 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":36847.840284183,"data":"--- 10.17 h since start\n"}
+,{"stream_name":"stdout","time":36847.84032744,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":36847.840334205,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":37447.845312691,"data":"--- 10.33 h since start\n"}
+,{"stream_name":"stdout","time":37447.845350177,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":37447.845355697,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":38047.853417467,"data":"--- 10.50 h since start\n"}
+,{"stream_name":"stdout","time":38047.853451866,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":38047.853472176,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":38647.854766675,"data":"--- 10.67 h since start\n"}
+,{"stream_name":"stdout","time":38647.854813398,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":38647.85482004,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":39247.857731897,"data":"--- 10.83 h since start\n"}
+,{"stream_name":"stdout","time":39247.857772542,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":39247.857779365,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":39847.862843695,"data":"--- 11.00 h since start\n"}
+,{"stream_name":"stdout","time":39847.862883176,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":39847.862889387,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":40447.866114436,"data":"--- 11.17 h since start\n"}
+,{"stream_name":"stdout","time":40447.866158708,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":40447.866164736,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":41047.872653219,"data":"--- 11.33 h since start\n"}
+,{"stream_name":"stdout","time":41047.872709597,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":41047.872722021,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":41647.874346832,"data":"--- 11.50 h since start\n"}
+,{"stream_name":"stdout","time":41647.874402339,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":41647.874407985,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":42247.881446702,"data":"--- 11.67 h since start\n"}
+,{"stream_name":"stdout","time":42247.881521521,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":42247.881529521,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+,{"stream_name":"stdout","time":42847.886056945,"data":"--- 11.83 h since start\n"}
+,{"stream_name":"stdout","time":42847.886102122,"data":"  native1000k_s5           running          epoch 4  9.50 h  authors' top-1 0.0034\n"}
+,{"stream_name":"stdout","time":42847.886109088,"data":"  native50k_s5             ended (code 0)   epoch 80  10.04 h  authors' top-1 0.0090\n"}
+]

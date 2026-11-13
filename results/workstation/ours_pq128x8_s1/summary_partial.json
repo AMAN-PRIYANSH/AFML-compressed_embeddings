@@ -1,0 +1,29 @@
+{
+ "run": "ours_pq128x8_s1",
+ "status": "stopped before budget (partial)",
+ "reason": "stopped 2026-11-08 01:31 by plan: 200k attacker set is the wrong condition after Phase C",
+ "seed": 1,
+ "budget_hours": 48.0,
+ "epochs": 70,
+ "train_hours": 0.8015882378816604,
+ "minutes_per_epoch_median": 0.6541488866011302,
+ "final": {
+  "top1": 0.0001220703125,
+  "avg_rank": 3952.9716796875,
+  "mean_cos": 0.13462865352630615
+ },
+ "best_by_true_pairs": {
+  "epoch": 48,
+  "top1": 0.00048828125,
+  "avg_rank": 4102.74951171875,
+  "mean_cos": 0.12890274822711945
+ },
+ "min_avg_rank_any_epoch": 3717.68505859375,
+ "max_top1_any_epoch": 0.00048828125,
+ "random_guess": {
+  "top1": 0.0001220703125,
+  "avg_rank": 4096.5
+ },
+ "duplicate_epoch_entries_replaced": 0,
+ "note": "final = honest unsupervised result; best = picked with the true pairs (upper bound)"
+}

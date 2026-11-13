@@ -1,0 +1,194 @@
+{
+ "setting": {
+  "k": 10,
+  "rounds": 5,
+  "ridge": 0.01
+ },
+ "expected": {
+  "round 0": "= Phase C2 picked seed: fp32 top-1 0.951 / cosine 0.508; pq128x8 0.758 / 0.402",
+  "round 5 cosine": "higher than round 0 but below supervised ridge (0.665). Guess fp32 0.53-0.62",
+  "round 5 token F1": "between Phase D (0.238) and supervised ridge (0.399). Guess fp32 0.25-0.33",
+  "risk": "top-1 may DROP while cosine rises (ridge targets are neighbour averages); we report both"
+ },
+ "schemes": {
+  "fp32": {
+   "picked_seed": 0,
+   "rounds": [
+    {
+     "round": 0,
+     "top1": 0.9510498046875,
+     "avg_rank": 1.1966552734375,
+     "mean_cos": 0.5075104236602783
+    },
+    {
+     "round": 1,
+     "top1": 0.7884521484375,
+     "avg_rank": 2.6019287109375,
+     "mean_cos": 0.556022047996521
+    },
+    {
+     "round": 2,
+     "top1": 0.556640625,
+     "avg_rank": 7.5814208984375,
+     "mean_cos": 0.5114353895187378
+    },
+    {
+     "round": 3,
+     "top1": 0.3638916015625,
+     "avg_rank": 17.989990234375,
+     "mean_cos": 0.47016268968582153
+    },
+    {
+     "round": 4,
+     "top1": 0.2239990234375,
+     "avg_rank": 35.8758544921875,
+     "mean_cos": 0.4311186373233795
+    },
+    {
+     "round": 5,
+     "top1": 0.1322021484375,
+     "avg_rank": 64.9927978515625,
+     "mean_cos": 0.3918192386627197
+    }
+   ],
+   "inversion": {
+    "name": "fp32 non-orthogonal round 5",
+    "n": 1000,
+    "bleu": 2.7134709977090847,
+    "token_f1": 0.2050531617575038,
+    "exact_match": 0.0,
+    "entity_recovery": 0.0811760945989134,
+    "gtr_cos_recovered_vs_true": 0.3687172830104828,
+    "minutes": 6.1992979367574055
+   }
+  },
+  "pq128x8": {
+   "picked_seed": 0,
+   "rounds": [
+    {
+     "round": 0,
+     "top1": 0.7584228515625,
+     "avg_rank": 24.3037109375,
+     "mean_cos": 0.4018422067165375
+    },
+    {
+     "round": 1,
+     "top1": 0.5386962890625,
+     "avg_rank": 65.17138671875,
+     "mean_cos": 0.449922114610672
+    },
+    {
+     "round": 2,
+     "top1": 0.328369140625,
+     "avg_rank": 99.3040771484375,
+     "mean_cos": 0.4083716571331024
+    },
+    {
+     "round": 3,
+     "top1": 0.1795654296875,
+     "avg_rank": 143.032470703125,
+     "mean_cos": 0.3683202564716339
+    },
+    {
+     "round": 4,
+     "top1": 0.091064453125,
+     "avg_rank": 203.67529296875,
+     "mean_cos": 0.3290351331233978
+    },
+    {
+     "round": 5,
+     "top1": 0.0478515625,
+     "avg_rank": 285.0235595703125,
+     "mean_cos": 0.29236939549446106
+    }
+   ],
+   "inversion": {
+    "name": "pq128x8 non-orthogonal round 5",
+    "n": 1000,
+    "bleu": 0.8356493871576115,
+    "token_f1": 0.16548586733646617,
+    "exact_match": 0.0,
+    "entity_recovery": 0.06999041227229147,
+    "gtr_cos_recovered_vs_true": 0.30802586674690247,
+    "minutes": 6.273617502053579
+   }
+  }
+ },
+ "entities_rescored_spacy_3_8_0": [
+  {
+   "source": "Phase D mini-vec2vec",
+   "set": "fp32",
+   "entity_recovery": 0.13678491530840525
+  },
+  {
+   "source": "Phase D mini-vec2vec",
+   "set": "int8",
+   "entity_recovery": 0.12623841482901885
+  },
+  {
+   "source": "Phase D mini-vec2vec",
+   "set": "int4",
+   "entity_recovery": 0.11665068712048578
+  },
+  {
+   "source": "Phase D mini-vec2vec",
+   "set": "pq128x8",
+   "entity_recovery": 0.0862895493767977
+  },
+  {
+   "source": "Phase D mini-vec2vec",
+   "set": "binary",
+   "entity_recovery": 0.07158836689038031
+  },
+  {
+   "source": "Phase D mini-vec2vec",
+   "set": "svd256",
+   "entity_recovery": 0.14157877916267178
+  },
+  {
+   "source": "Phase D control",
+   "set": "positive_control",
+   "entity_recovery": 0.9063598593799936
+  },
+  {
+   "source": "Phase D control",
+   "set": "scale_control",
+   "entity_recovery": 0.8887823585810163
+  },
+  {
+   "source": "E1 supervised",
+   "set": "procrustes",
+   "entity_recovery": 0.17130073505912433
+  },
+  {
+   "source": "E1 supervised",
+   "set": "ridge",
+   "entity_recovery": 0.23841482901885586
+  },
+  {
+   "source": "E1 supervised",
+   "set": "oracle_linear",
+   "entity_recovery": 0.25727069351230425
+  },
+  {
+   "source": "E1 supervised",
+   "set": "mlp",
+   "entity_recovery": 0.22690955576861618
+  },
+  {
+   "source": "E4 non-orthogonal",
+   "set": "fp32",
+   "entity_recovery": 0.0811760945989134
+  },
+  {
+   "source": "E4 non-orthogonal",
+   "set": "pq128x8",
+   "entity_recovery": 0.06999041227229147
+  },
+  {
+   "source": "floor",
+   "set": "random other passage",
+   "entity_recovery": 0.005433045701502077
+  }
+ ]
+}

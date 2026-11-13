@@ -1,0 +1,29 @@
+{
+ "run": "ss_fp32_s1",
+ "status": "stopped before budget (partial)",
+ "reason": "stopped by plan (Phase C2): attacker set still contained near-copies of victim passages; restarted as ss3_* with the near-copy filter",
+ "seed": 1,
+ "budget_hours": 48.0,
+ "epochs": 1687,
+ "train_hours": 9.014211891492208,
+ "minutes_per_epoch_median": 0.28013895750045775,
+ "final": {
+  "top1": 0.001708984375,
+  "avg_rank": 2391.2490234375,
+  "mean_cos": 0.19526146352291107
+ },
+ "best_by_true_pairs": {
+  "epoch": 981,
+  "top1": 0.0030517578125,
+  "avg_rank": 2441.203125,
+  "mean_cos": 0.19015702605247498
+ },
+ "min_avg_rank_any_epoch": 2376.908935546875,
+ "max_top1_any_epoch": 0.0030517578125,
+ "random_guess": {
+  "top1": 0.0001220703125,
+  "avg_rank": 4096.5
+ },
+ "duplicate_epoch_entries_replaced": 0,
+ "note": "final = honest unsupervised result; best = picked with the true pairs (upper bound)"
+}

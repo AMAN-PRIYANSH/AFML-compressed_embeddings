@@ -1,0 +1,221 @@
+{
+ "expected": {
+  "picked seeds": "reproduce Phase D (fp32 0.238, pq128x8 0.175, svd256 0.251 token F1) within 0.005",
+  "collapsed seeds (top-1 < 0.05)": "token F1 near the floor (0.10-0.13)",
+  "good seeds": "token F1 within about 0.02 of each other inside a scheme",
+  "svd256 vs fp32": "unknown; decided by the rule in the header"
+ },
+ "per_seed": [
+  {
+   "scheme": "fp32",
+   "seed": 0,
+   "picked": true,
+   "phaseC_top1": 0.9510498046875,
+   "self_consistency": 0.7853642106056213,
+   "token_f1": 0.2377529259377781,
+   "bleu": 2.7776573417268957,
+   "entity_recovery": 0.13678491530840525,
+   "gtr_cos": 0.4796443283557892,
+   "minutes": 6.074072511990865
+  },
+  {
+   "scheme": "fp32",
+   "seed": 1,
+   "picked": false,
+   "phaseC_top1": 0.923583984375,
+   "self_consistency": 0.7666783928871155,
+   "token_f1": 0.2328362213134293,
+   "bleu": 2.506121026690475,
+   "entity_recovery": 0.13294982422499202,
+   "gtr_cos": 0.46625494956970215,
+   "minutes": 6.151036429405212
+  },
+  {
+   "scheme": "fp32",
+   "seed": 2,
+   "picked": false,
+   "phaseC_top1": 0.9461669921875,
+   "self_consistency": 0.7821508646011353,
+   "token_f1": 0.23009774120484278,
+   "bleu": 2.3783168201024183,
+   "entity_recovery": 0.12719718759987217,
+   "gtr_cos": 0.46721673011779785,
+   "minutes": 6.154877650737762
+  },
+  {
+   "scheme": "fp32",
+   "seed": 3,
+   "picked": false,
+   "phaseC_top1": 0.92919921875,
+   "self_consistency": 0.7657291293144226,
+   "token_f1": 0.22617934151627125,
+   "bleu": 2.612950413972688,
+   "entity_recovery": 0.12112496005113454,
+   "gtr_cos": 0.46662023663520813,
+   "minutes": 6.144169926643372
+  },
+  {
+   "scheme": "fp32",
+   "seed": 4,
+   "picked": false,
+   "phaseC_top1": 0.7423095703125,
+   "self_consistency": 0.7067080140113831,
+   "token_f1": 0.19859273612181397,
+   "bleu": 1.7828742462555602,
+   "entity_recovery": 0.08852668584212209,
+   "gtr_cos": 0.40332409739494324,
+   "minutes": 6.1493719975153605
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 0,
+   "picked": true,
+   "phaseC_top1": 0.7584228515625,
+   "self_consistency": 0.723322868347168,
+   "token_f1": 0.1746328673932817,
+   "bleu": 1.1992463032908207,
+   "entity_recovery": 0.0862895493767977,
+   "gtr_cos": 0.3756757974624634,
+   "minutes": 6.158153653144836
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 1,
+   "picked": false,
+   "phaseC_top1": 0.029541015625,
+   "self_consistency": 0.5782585740089417,
+   "token_f1": 0.13178967734373292,
+   "bleu": 0.6120246923760109,
+   "entity_recovery": 0.023010546500479387,
+   "gtr_cos": 0.22744588553905487,
+   "minutes": 6.162226951122284
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 2,
+   "picked": false,
+   "phaseC_top1": 0.010009765625,
+   "self_consistency": 0.5610511302947998,
+   "token_f1": 0.1160414986999256,
+   "bleu": 0.34894695982154467,
+   "entity_recovery": 0.01821668264621285,
+   "gtr_cos": 0.19228698313236237,
+   "minutes": 6.162046337127686
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 3,
+   "picked": false,
+   "phaseC_top1": 0.6839599609375,
+   "self_consistency": 0.6945503354072571,
+   "token_f1": 0.17673294195024875,
+   "bleu": 1.1615712796161637,
+   "entity_recovery": 0.0738255033557047,
+   "gtr_cos": 0.371242493391037,
+   "minutes": 6.149928780396779
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 4,
+   "picked": false,
+   "phaseC_top1": 0.762451171875,
+   "self_consistency": 0.7145242691040039,
+   "token_f1": 0.18106540734844964,
+   "bleu": 1.2878811868313755,
+   "entity_recovery": 0.0945989133908597,
+   "gtr_cos": 0.3859417736530304,
+   "minutes": 6.1612044930458065
+  },
+  {
+   "scheme": "svd256",
+   "seed": 0,
+   "picked": false,
+   "phaseC_top1": 0.7774658203125,
+   "self_consistency": 0.746579110622406,
+   "token_f1": 0.22455290090154043,
+   "bleu": 2.282481699156773,
+   "entity_recovery": 0.12943432406519656,
+   "gtr_cos": 0.44960516691207886,
+   "minutes": 6.1566036184628805
+  },
+  {
+   "scheme": "svd256",
+   "seed": 1,
+   "picked": true,
+   "phaseC_top1": 0.8564453125,
+   "self_consistency": 0.7622377872467041,
+   "token_f1": 0.2517611711134252,
+   "bleu": 3.4284185600978923,
+   "entity_recovery": 0.14189837008628955,
+   "gtr_cos": 0.4777992367744446,
+   "minutes": 6.161583137512207
+  },
+  {
+   "scheme": "svd256",
+   "seed": 2,
+   "picked": false,
+   "phaseC_top1": 0.8519287109375,
+   "self_consistency": 0.7295300960540771,
+   "token_f1": 0.2410052069476992,
+   "bleu": 3.4083350649938375,
+   "entity_recovery": 0.1297539149888143,
+   "gtr_cos": 0.46090778708457947,
+   "minutes": 6.1574021259943645
+  },
+  {
+   "scheme": "svd256",
+   "seed": 3,
+   "picked": false,
+   "phaseC_top1": 0.033203125,
+   "self_consistency": 0.5706726312637329,
+   "token_f1": 0.13672178838040278,
+   "bleu": 0.5314220178926238,
+   "entity_recovery": 0.03962927452860339,
+   "gtr_cos": 0.22778794169425964,
+   "minutes": 6.152228128910065
+  },
+  {
+   "scheme": "svd256",
+   "seed": 4,
+   "picked": false,
+   "phaseC_top1": 0.775634765625,
+   "self_consistency": 0.7212328314781189,
+   "token_f1": 0.2340500302083494,
+   "bleu": 2.79370335770591,
+   "entity_recovery": 0.12911473314157879,
+   "gtr_cos": 0.44952574372291565,
+   "minutes": 6.162686868508657
+  }
+ ],
+ "summary": {
+  "fp32": {
+   "all_seeds_mean_f1": 0.22509179321882708,
+   "all_seeds_sd": 0.015400671672106429,
+   "good_seeds": 5,
+   "good_seeds_mean_f1": 0.22509179321882708,
+   "good_seeds_sd": 0.015400671672106429,
+   "good_seeds_mean_entities": 0.12131671460530521
+  },
+  "pq128x8": {
+   "all_seeds_mean_f1": 0.15605247854712773,
+   "all_seeds_sd": 0.029950463494037877,
+   "good_seeds": 3,
+   "good_seeds_mean_f1": 0.17747707223066003,
+   "good_seeds_sd": 0.003280196636541276,
+   "good_seeds_mean_entities": 0.08490465537445403
+  },
+  "svd256": {
+   "all_seeds_mean_f1": 0.21761821951028343,
+   "all_seeds_sd": 0.04630069951938948,
+   "good_seeds": 4,
+   "good_seeds_mean_f1": 0.23784232729275356,
+   "good_seeds_sd": 0.01147066391568467,
+   "good_seeds_mean_entities": 0.1325503355704698
+  }
+ },
+ "svd_vs_fp32": {
+  "gap": 0.012750534073926484,
+  "threshold": 0.015400671672106429,
+  "verdict": "no reliable difference between svd256 and fp32"
+ }
+}

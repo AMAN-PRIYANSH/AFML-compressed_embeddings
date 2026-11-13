@@ -1,0 +1,29 @@
+{
+ "run": "ours_fp32_s8",
+ "status": "stopped before budget (partial)",
+ "reason": "stopped 2026-11-08 00:40 by plan: plateau, GPU given to seed 1",
+ "seed": 8,
+ "budget_hours": 66.0,
+ "epochs": 1901,
+ "train_hours": 21.682040675017568,
+ "minutes_per_epoch_median": 0.6371410806973775,
+ "final": {
+  "top1": 0.00048828125,
+  "avg_rank": 3158.77392578125,
+  "mean_cos": 0.15340065956115723
+ },
+ "best_by_true_pairs": {
+  "epoch": 362,
+  "top1": 0.0015869140625,
+  "avg_rank": 3051.51416015625,
+  "mean_cos": 0.1620510369539261
+ },
+ "min_avg_rank_any_epoch": 2959.90869140625,
+ "max_top1_any_epoch": 0.0015869140625,
+ "random_guess": {
+  "top1": 0.0001220703125,
+  "avg_rank": 4096.5
+ },
+ "duplicate_epoch_entries_replaced": 0,
+ "note": "final = honest unsupervised result; best = picked with the true pairs (upper bound)"
+}

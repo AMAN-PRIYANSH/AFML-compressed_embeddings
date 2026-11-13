@@ -1,0 +1,19 @@
+{
+ "kind": "native",
+ "scheme": "fp32",
+ "seed": 5,
+ "budget_hours": 10.0,
+ "smoke_test": false,
+ "resumed_from": null,
+ "machine": "520dcc2a7f29",
+ "gpu": "Tesla T4",
+ "torch": "2.11.0+cu130",
+ "num_points_per_side": 1000000,
+ "steps_per_epoch": 3906,
+ "train_hours": 11.871648238102596,
+ "epochs": 5,
+ "steps": 19530,
+ "minutes_per_epoch_median": 141.97806579271952,
+ "authors_val_top1_last": 0.00341796875,
+ "authors_val_top1_max": 0.005859375
+}

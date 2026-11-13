@@ -1,0 +1,88 @@
+[{"stream_name":"stderr","time":10.720832994,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.720901479,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.720907971,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.720911625,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.429571085,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.429610025,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.429615595,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.429620133,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":33.459581383,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":33.459621189,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":33.459627419,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":33.459632374,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":33.459637543,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":33.459642144,"data":"diffusers 0.42.0 requires huggingface-hub\u003c3.0,\u003e=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":52.13594548,"data":"\u001b[0m\u001b[38;5;2m✔ Download and installation successful\u001b[0m\n"}
+,{"stream_name":"stdout","time":52.135976791,"data":"You can now load the package via spacy.load('en_core_web_sm')\n"}
+,{"stream_name":"stdout","time":52.13598352,"data":"\u001b[38;5;3m⚠ Restart to reload dependencies\u001b[0m\n"}
+,{"stream_name":"stdout","time":52.13598972,"data":"If you are in a Jupyter or Colab notebook, you may need to restart Python in\n"}
+,{"stream_name":"stdout","time":52.135995183,"data":"order to load all the package's dependencies. You can do this by selecting the\n"}
+,{"stream_name":"stdout","time":52.136001211,"data":"'Restart kernel' or 'Restart runtime' option.\n"}
+,{"stream_name":"stdout","time":52.339922967,"data":"\u001b[38;5;2m✔ Download and installation successful\u001b[0m\n"}
+,{"stream_name":"stdout","time":52.339960267,"data":"You can now load the package via spacy.load('en_core_web_sm')\n"}
+,{"stream_name":"stdout","time":52.339966349,"data":"\u001b[38;5;3m⚠ Restart to reload dependencies\u001b[0m\n"}
+,{"stream_name":"stdout","time":52.339971331,"data":"If you are in a Jupyter or Colab notebook, you may need to restart Python in\n"}
+,{"stream_name":"stdout","time":52.339976025,"data":"order to load all the package's dependencies. You can do this by selecting the\n"}
+,{"stream_name":"stdout","time":52.339980426,"data":"'Restart kernel' or 'Restart runtime' option.\n"}
+,{"stream_name":"stdout","time":60.404460938,"data":"spaCy 3.8.16 | en_core_web_sm 3.8.0\n"}
+,{"stream_name":"stdout","time":67.293881795,"data":"- round 0: = Phase C2 picked seed: fp32 top-1 0.951 / cosine 0.508; pq128x8 0.758 / 0.402\n"}
+,{"stream_name":"stdout","time":67.293923101,"data":"- round 5 cosine: higher than round 0 but below supervised ridge (0.665). Guess fp32 0.53-0.62\n"}
+,{"stream_name":"stdout","time":67.293930064,"data":"- round 5 token F1: between Phase D (0.238) and supervised ridge (0.399). Guess fp32 0.25-0.33\n"}
+,{"stream_name":"stdout","time":67.293934675,"data":"- risk: top-1 may DROP while cosine rises (ridge targets are neighbour averages); we report both\n"}
+,{"stream_name":"stderr","time":95.942103057,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":95.942236955,"data":"I0000 00:00:1794156686.465230      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":96.145524092,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":96.145560408,"data":"I0000 00:00:1794156686.465230      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":96.145568223,"data":"\n"}
+,{"stream_name":"stderr","time":96.145573868,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":96.145579911,"data":"I0000 00:00:1794156686.465230      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":173.88479502,"data":"fp32 {'round': 0, 'top1': 0.9510498046875, 'avg_rank': 1.1966552734375, 'mean_cos': 0.5075104236602783}\n"}
+,{"stream_name":"stdout","time":178.596343525,"data":"fp32 {'round': 1, 'top1': 0.7884521484375, 'avg_rank': 2.6019287109375, 'mean_cos': 0.556022047996521}\n"}
+,{"stream_name":"stdout","time":181.880882632,"data":"fp32 {'round': 2, 'top1': 0.556640625, 'avg_rank': 7.5814208984375, 'mean_cos': 0.5114353895187378}\n"}
+,{"stream_name":"stdout","time":185.203196655,"data":"fp32 {'round': 3, 'top1': 0.3638916015625, 'avg_rank': 17.989990234375, 'mean_cos': 0.47016268968582153}\n"}
+,{"stream_name":"stdout","time":188.464602882,"data":"fp32 {'round': 4, 'top1': 0.2239990234375, 'avg_rank': 35.8758544921875, 'mean_cos': 0.4311186373233795}\n"}
+,{"stream_name":"stdout","time":191.744530949,"data":"fp32 {'round': 5, 'top1': 0.1322021484375, 'avg_rank': 64.9927978515625, 'mean_cos': 0.3918192386627197}\n"}
+,{"stream_name":"stdout","time":563.72218243,"data":"{\"name\": \"fp32 non-orthogonal round 5\", \"n\": 1000, \"bleu\": 2.7134709977090847, \"token_f1\": 0.2050531617575038, \"exact_match\": 0.0, \"entity_recovery\": 0.0811760945989134, \"gtr_cos_recovered_vs_true\": 0.3687172830104828}\n"}
+,{"stream_name":"stdout","time":563.722243267,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":563.722249412,"data":"   GOT : American victories in the First Nation War In May 1768, President William Chatterton ordered the Dispatches of 1768, who served as Colonel\n"}
+,{"stream_name":"stdout","time":563.72225758,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":563.722260625,"data":"   GOT : vandir (Münsel) vandir (Latin for \"John the Roman\", Arabic for \"Pry\n"}
+,{"stream_name":"stdout","time":567.640001377,"data":"pq128x8 {'round': 0, 'top1': 0.7584228515625, 'avg_rank': 24.3037109375, 'mean_cos': 0.4018422067165375}\n"}
+,{"stream_name":"stdout","time":572.219876508,"data":"pq128x8 {'round': 1, 'top1': 0.5386962890625, 'avg_rank': 65.17138671875, 'mean_cos': 0.449922114610672}\n"}
+,{"stream_name":"stdout","time":575.714326725,"data":"pq128x8 {'round': 2, 'top1': 0.328369140625, 'avg_rank': 99.3040771484375, 'mean_cos': 0.4083716571331024}\n"}
+,{"stream_name":"stdout","time":579.148056115,"data":"pq128x8 {'round': 3, 'top1': 0.1795654296875, 'avg_rank': 143.032470703125, 'mean_cos': 0.3683202564716339}\n"}
+,{"stream_name":"stdout","time":582.558171384,"data":"pq128x8 {'round': 4, 'top1': 0.091064453125, 'avg_rank': 203.67529296875, 'mean_cos': 0.3290351331233978}\n"}
+,{"stream_name":"stdout","time":585.938796857,"data":"pq128x8 {'round': 5, 'top1': 0.0478515625, 'avg_rank': 285.0235595703125, 'mean_cos': 0.29236939549446106}\n"}
+,{"stream_name":"stdout","time":962.185134495,"data":"{\"name\": \"pq128x8 non-orthogonal round 5\", \"n\": 1000, \"bleu\": 0.8356493871576115, \"token_f1\": 0.16548586733646617, \"exact_match\": 0.0, \"entity_recovery\": 0.06999041227229147, \"gtr_cos_recovered_vs_true\": 0.30802586674690247}\n"}
+,{"stream_name":"stdout","time":962.185175176,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":962.185182182,"data":"   GOT : American victory in the First World War In 1887 the Fort Wayne Indians and the British India Battle Team were leaders of the 17th Congress headed by Benjamin\n"}
+,{"stream_name":"stdout","time":962.185187293,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":962.185191509,"data":"   GOT : Dinarve (Middle French) Dinarve (from the Latins \"John de Foss\", \"Ladine\", \"German\n"}
+,{"stream_name":"stdout","time":966.808487382,"data":"              source                  set  entity_recovery\n"}
+,{"stream_name":"stdout","time":966.808518478,"data":"Phase D mini-vec2vec                 fp32           0.1368\n"}
+,{"stream_name":"stdout","time":966.808526713,"data":"Phase D mini-vec2vec                 int8           0.1262\n"}
+,{"stream_name":"stdout","time":966.808532156,"data":"Phase D mini-vec2vec                 int4           0.1167\n"}
+,{"stream_name":"stdout","time":966.808537267,"data":"Phase D mini-vec2vec              pq128x8           0.0863\n"}
+,{"stream_name":"stdout","time":966.808541927,"data":"Phase D mini-vec2vec               binary           0.0716\n"}
+,{"stream_name":"stdout","time":966.808546393,"data":"Phase D mini-vec2vec               svd256           0.1416\n"}
+,{"stream_name":"stdout","time":966.808550894,"data":"     Phase D control     positive_control           0.9064\n"}
+,{"stream_name":"stdout","time":966.808555394,"data":"     Phase D control        scale_control           0.8888\n"}
+,{"stream_name":"stdout","time":966.808566888,"data":"       E1 supervised           procrustes           0.1713\n"}
+,{"stream_name":"stdout","time":966.808589091,"data":"       E1 supervised                ridge           0.2384\n"}
+,{"stream_name":"stdout","time":966.808594713,"data":"       E1 supervised        oracle_linear           0.2573\n"}
+,{"stream_name":"stdout","time":966.808599746,"data":"       E1 supervised                  mlp           0.2269\n"}
+,{"stream_name":"stdout","time":966.808604306,"data":"   E4 non-orthogonal                 fp32           0.0812\n"}
+,{"stream_name":"stdout","time":966.808609126,"data":"   E4 non-orthogonal              pq128x8           0.0700\n"}
+,{"stream_name":"stdout","time":966.80861358,"data":"               floor random other passage           0.0054\n"}
+,{"stream_name":"stdout","time":968.35925804,"data":"['W_nonortho_fp32.npy', 'W_nonortho_pq128x8.npy', 'entities_rescored_spacy380.csv', 'inversions_nonortho_fp32.csv', 'inversions_nonortho_pq128x8.csv', 'phaseE4.png', 'results_E4.json']\n"}
+,{"stream_name":"stderr","time":973.86916253,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":973.869213587,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":974.088411301,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":974.0884522,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":975.07219154,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":975.209630493,"data":"[NbConvertApp] Writing 581374 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":977.923424019,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":978.598530896,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":978.598554279,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":978.598722583,"data":"[NbConvertApp] Writing 710490 bytes to __results__.html\n"}
+]

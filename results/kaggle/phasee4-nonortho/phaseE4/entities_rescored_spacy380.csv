@@ -1,0 +1,16 @@
+source,set,entity_recovery
+Phase D mini-vec2vec,fp32,0.13678491530840525
+Phase D mini-vec2vec,int8,0.12623841482901885
+Phase D mini-vec2vec,int4,0.11665068712048578
+Phase D mini-vec2vec,pq128x8,0.0862895493767977
+Phase D mini-vec2vec,binary,0.07158836689038031
+Phase D mini-vec2vec,svd256,0.14157877916267178
+Phase D control,positive_control,0.9063598593799936
+Phase D control,scale_control,0.8887823585810163
+E1 supervised,procrustes,0.17130073505912433
+E1 supervised,ridge,0.23841482901885586
+E1 supervised,oracle_linear,0.25727069351230425
+E1 supervised,mlp,0.22690955576861618
+E4 non-orthogonal,fp32,0.0811760945989134
+E4 non-orthogonal,pq128x8,0.06999041227229147
+floor,random other passage,0.005433045701502077

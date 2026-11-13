@@ -1,0 +1,29 @@
+{
+ "run": "ours_fp32_s7",
+ "status": "stopped before budget (partial)",
+ "reason": "stopped 2026-11-08 00:40 by plan: plateau, GPU given to seed 1",
+ "seed": 7,
+ "budget_hours": 66.0,
+ "epochs": 1857,
+ "train_hours": 21.18953878833188,
+ "minutes_per_epoch_median": 0.6373305598894755,
+ "final": {
+  "top1": 0.0009765625,
+  "avg_rank": 3101.936767578125,
+  "mean_cos": 0.15799985826015472
+ },
+ "best_by_true_pairs": {
+  "epoch": 287,
+  "top1": 0.0023193359375,
+  "avg_rank": 3059.53466796875,
+  "mean_cos": 0.17139407992362976
+ },
+ "min_avg_rank_any_epoch": 2983.408203125,
+ "max_top1_any_epoch": 0.0023193359375,
+ "random_guess": {
+  "top1": 0.0001220703125,
+  "avg_rank": 4096.5
+ },
+ "duplicate_epoch_entries_replaced": 42,
+ "note": "final = honest unsupervised result; best = picked with the true pairs (upper bound)"
+}
