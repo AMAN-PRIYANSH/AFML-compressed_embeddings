@@ -1,0 +1,65 @@
+[{"stream_name":"stderr","time":8.338539101,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.338616241,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.338623599,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.338627847,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.99617035,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.996227173,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.996233713,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.996238546,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":29.887648202,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":29.887686934,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.887694111,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.887699331,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.887703962,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":29.887708936,"data":"diffusers 0.42.0 requires huggingface-hub\u003c3.0,\u003e=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":43.93451749,"data":"\u001b[0m\u001b[38;5;2m✔ Download and installation successful\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":43.934550221,"data":"You can now load the package via spacy.load('en_core_web_sm')\r\n"}
+,{"stream_name":"stdout","time":44.49048863,"data":"\u001b[38;5;3m⚠ Restart to reload dependencies\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":44.490530798,"data":"If you are in a Jupyter or Colab notebook, you may need to restart Python in\r\n"}
+,{"stream_name":"stdout","time":44.49053867,"data":"order to load all the package's dependencies. You can do this by selecting the\r\n"}
+,{"stream_name":"stdout","time":44.49054432,"data":"'Restart kernel' or 'Restart runtime' option.\r\n"}
+,{"stream_name":"stdout","time":51.76628595,"data":"example passage: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk\n"}
+,{"stream_name":"stdout","time":51.778072139,"data":"- positive control (true GTR vectors): BLEU 85-95 (Phase A: 90.0 on 32 passages). GATE: must be \u003e 80\n"}
+,{"stream_name":"stdout","time":51.778107233,"data":"- scale control: a little below the positive control; unknown how much (guess BLEU 50-90)\n"}
+,{"stream_name":"stdout","time":51.778116117,"data":"- floor (random other passage): BLEU about 1-3, token F1 about 0.05-0.15\n"}
+,{"stream_name":"stdout","time":51.778121726,"data":"- fp32 translated: much lower than the controls: Phase C cosine to the true vector is only about 0.5. Guess: BLEU 5-25, token F1 0.2-0.45, entity recovery 0.1-0.4\n"}
+,{"stream_name":"stdout","time":51.778141388,"data":"- int8 / int4: same as fp32 within noise\n"}
+,{"stream_name":"stdout","time":51.778146357,"data":"- pq128x8 / binary / svd256: ordered like their Phase C top-1; lower if their translation was worse\n"}
+,{"stream_name":"stdout","time":51.778151098,"data":"- top-1 hits vs misses: hits recover more text than misses\n"}
+,{"stream_name":"stderr","time":78.310084387,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":78.310146122,"data":"I0000 00:00:1794164909.888487      22 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":78.519947496,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":78.519981197,"data":"I0000 00:00:1794164909.888487      22 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":78.519988717,"data":"\n"}
+,{"stream_name":"stderr","time":78.519993487,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":78.519998089,"data":"I0000 00:00:1794164909.888487      22 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":145.361018564,"data":"entities in the 1,000 passages: 3129\n"}
+,{"stream_name":"stdout","time":485.304105093,"data":"{\"name\": \"positive control\", \"bleu\": 85.52101493484679, \"token_f1\": 0.9572118752094675, \"token_f1_ci95\": [0.9516981082458417, 0.9623510519341868], \"exact_match\": 0.559, \"entity_recovery\": 0.9063598593799936, \"gtr_cos_recovered_vs_true\": 0.9910014867782593}\n"}
+,{"stream_name":"stdout","time":828.527525418,"data":"{\"name\": \"scale control\", \"bleu\": 82.41232221427882, \"token_f1\": 0.9449103297147545, \"token_f1_ci95\": [0.938825097925431, 0.9507028450760984], \"exact_match\": 0.486, \"entity_recovery\": 0.8887823585810163, \"gtr_cos_recovered_vs_true\": 0.9885156154632568}\n"}
+,{"stream_name":"stdout","time":835.173819715,"data":"{\"name\": \"floor\", \"bleu\": 0.28768770141088995, \"token_f1\": 0.10034000336922479, \"token_f1_ci95\": [0.09597393163984527, 0.10446752141479387], \"exact_match\": 0.0, \"entity_recovery\": 0.005433045701502077, \"gtr_cos_recovered_vs_true\": 0.12638701498508453}\n"}
+,{"stream_name":"stdout","time":835.173857894,"data":"controls done in 11.5 min\n"}
+,{"stream_name":"stdout","time":1179.256495106,"data":"{\"name\": \"fp32\", \"bleu\": 2.835846948183662, \"token_f1\": 0.2359328648059161, \"token_f1_ci95\": [0.22902776237493327, 0.24334854758543514], \"exact_match\": 0.0, \"entity_recovery\": 0.13870246085011187, \"gtr_cos_recovered_vs_true\": 0.48225513100624084}\n"}
+,{"stream_name":"stdout","time":1179.256531418,"data":"fp32: BLEU 2.8  token F1 0.236  entities 0.139  hit rate 0.956  (5.7 min)\n"}
+,{"stream_name":"stdout","time":1179.256538512,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":1179.256544617,"data":"   GOT : description of Washington at the Battle of the Confederation. When Franklin Plantsley-Smith began representing his army department, 174 former army departments were including\n"}
+,{"stream_name":"stdout","time":1179.2565504,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":1179.256556494,"data":"   GOT : /\u003e/div\u003e Brettulius Noah Brassi Brettulius Noah Brassi, who was named in Sylvester's honour.\n"}
+,{"stream_name":"stdout","time":1179.256562746,"data":"   TRUE: White Boy Rick \"Set in 1980s Detroit at the height of the crack epidemic and the War on Drugs, WHITE BOY RICK is \n"}
+,{"stream_name":"stdout","time":1179.256576863,"data":"   GOT : to a \"non-care\" story about a black teen at Milton Reece in Budd, Indiana in the 1980s while\n"}
+,{"stream_name":"stdout","time":1179.422239077,"data":"                      name   bleu  token_f1  entity_recovery  exact_match  gtr_cos_recovered_vs_true\n"}
+,{"stream_name":"stdout","time":1179.422296079,"data":"     positive_true_vectors 85.521     0.957            0.906        0.559                      0.991\n"}
+,{"stream_name":"stdout","time":1179.422302298,"data":"             scale_control 82.412     0.945            0.889        0.486                      0.989\n"}
+,{"stream_name":"stdout","time":1179.422306394,"data":"floor_random_other_passage  0.288     0.100            0.005        0.000                      0.126\n"}
+,{"stream_name":"stdout","time":1179.422310795,"data":"                      fp32  2.836     0.236            0.139        0.000                      0.482\n"}
+,{"stream_name":"stdout","time":1179.990902806,"data":"['inversions_controls.csv', 'inversions_fp32.csv', 'phaseD_summary.png', 'results_D.json']\n"}
+,{"stream_name":"stderr","time":1185.445084689,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1185.445115196,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1185.625976662,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1185.626004362,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1186.534025776,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1186.673463288,"data":"[NbConvertApp] Writing 540432 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1189.458544461,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1190.118413846,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":1190.118437963,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":1190.118617497,"data":"[NbConvertApp] Writing 694655 bytes to __results__.html\n"}
+]

@@ -1,0 +1,46 @@
+[{"stream_name":"stderr","time":11.077086489,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.077153864,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.077161598,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.077166701,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.310264382,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.310426395,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.310434518,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.31043925,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":39.889466707,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":39.889543821,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":39.889549345,"data":"gradio 6.26.0 requires huggingface-hub\u003c2.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":39.889552925,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":39.889556944,"data":"diffusers 0.40.0 requires huggingface-hub\u003c2.0,\u003e=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stderr","time":45.548513344,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":45.549623167,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":45.549657065,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":45.549667309,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":45.549673799,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":45.549679678,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":45.549685672,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":45.549691435,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":45.549697801,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":45.549703861,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":45.5497098,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":45.549717784,"data":"Exception encountered at \"In [2]\":\n"}
+,{"stream_name":"stderr","time":45.549723731,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":45.549745691,"data":"AssertionError                            Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":45.549750958,"data":"/tmp/ipykernel_16/271967657.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":45.549755754,"data":"     15 random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED)\n"}
+,{"stream_name":"stderr","time":45.54976008,"data":"     16 DEVICE = \"cuda\" if torch.cuda.is_available() else \"cpu\"\n"}
+,{"stream_name":"stderr","time":45.549765263,"data":"---\u003e 17 assert DEVICE == \"cuda\", \"No GPU. Turn on GPU T4 in the notebook settings.\"\n"}
+,{"stream_name":"stderr","time":45.549770225,"data":"     18 print(torch.__version__, torch.cuda.get_device_name(0))\n"}
+,{"stream_name":"stderr","time":45.549775014,"data":"     19 import transformers; print(\"transformers\", transformers.__version__)\n"}
+,{"stream_name":"stderr","time":45.549780052,"data":"\n"}
+,{"stream_name":"stderr","time":45.549784728,"data":"AssertionError: No GPU. Turn on GPU T4 in the notebook settings.\n"}
+,{"stream_name":"stderr","time":45.549789515,"data":"\n"}
+,{"stream_name":"stderr","time":48.663755949,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":48.663808664,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":48.920289493,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":48.920335417,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":49.964663155,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":50.074438984,"data":"[NbConvertApp] Writing 34269 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":53.680177141,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":54.491582632,"data":"[NbConvertApp] Writing 388168 bytes to __results__.html\n"}
+,{"stream_name":"stdout","time":55.489195668,"data":"\u001b[0m"}
+]

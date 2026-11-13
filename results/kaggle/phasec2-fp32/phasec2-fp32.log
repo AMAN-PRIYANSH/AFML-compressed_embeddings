@@ -1,0 +1,1018 @@
+[{"stream_name":"stderr","time":7.805197204,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.805248784,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.805254427,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.805257707,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.498368242,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.498407126,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.498413811,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.498418198,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.363991007,"data":"schemes ['fp32'] | cpus 4 | scipy 1.16.3 | sklearn 1.6.1 | torch 2.11.0+cpu\n"}
+,{"stream_name":"stdout","time":15.380637122,"data":"- random guess: top-1 = 1/8,192 = 0.00012, average rank = 4,096\n"}
+,{"stream_name":"stdout","time":15.380672264,"data":"- control e5-\u003egtr (paper Table 1): top-1 0.96, average rank 1.10, cosine 0.22 / 0.49 / 0.51 (initial / refine-1 / refine-2). GATE: ours must reach top-1 \u003e= 0.85, else the notebook stops\n"}
+,{"stream_name":"stdout","time":15.380679799,"data":"- fp32 BGE-large -\u003e GTR (same-source attacker): v1 check already gave top-1 0.55 / 0.91 / 0.95 (seeds 0-2). Expect mean about 0.8 over 5 seeds, with 0-2 weak seeds\n"}
+,{"stream_name":"stdout","time":15.380685271,"data":"- leak check: before filtering 1.56% of victim passages have a near-copy (found 8 Nov); after dropping those attacker rows: 0\n"}
+,{"stream_name":"stdout","time":15.38068924,"data":"- without former near-copies: top-1 on the eval passages that never had a near-copy: within 0.02 of the full score\n"}
+,{"stream_name":"stdout","time":15.38069377,"data":"- self-consistency: should be higher for good seeds than for weak ones (Spearman \u003e 0.5 across all runs)\n"}
+,{"stream_name":"stdout","time":15.380697871,"data":"- int8, int4 vs fp32: within 0.02 top-1 (decoded cosine 0.99997 / 0.992: almost the same vectors)\n"}
+,{"stream_name":"stdout","time":15.3807021,"data":"- pq128x8 vs fp32: lower; decoded cosine 0.90. Guess: 0.0-0.2 below fp32\n"}
+,{"stream_name":"stdout","time":15.380706022,"data":"- binary vs fp32: lower again; decoded cosine 0.79. Guess: 0.1-0.4 below fp32\n"}
+,{"stream_name":"stdout","time":15.380710019,"data":"- svd256 vs fp32: unknown: 256 -\u003e 768 map, 89% of the energy kept\n"}
+,{"stream_name":"stdout","time":15.380713967,"data":"- spread over seeds: larger than the paper's 0.00-0.01 (v1 check: 0.55-0.95)\n"}
+,{"stream_name":"stdout","time":15.380718107,"data":"- supervised upper bound (v1, with pairs): Procrustes 0.993, ridge 0.994, MLP 0.993 top-1\n"}
+,{"stream_name":"stdout","time":15.986710476,"data":"mini-vec2vec code loaded\n"}
+,{"stream_name":"stderr","time":17.065913607,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":17.065948651,"data":"\n"}
+,{"stream_name":"stderr","time":17.065954412,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":22.91613627,"data":"control sizes: (25904, 768) (25904, 768) (8192, 768)\n"}
+,{"stream_name":"stderr","time":24.726480033,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":24.726519117,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":24.7265251,"data":"\n"}
+,{"stream_name":"stderr","time":24.726529165,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":24.726534369,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":26.981693951,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":26.981730501,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":26.981736348,"data":"\n"}
+,{"stream_name":"stderr","time":26.981740645,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":26.981746088,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":29.202072088,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":29.20211336,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":29.202119457,"data":"\n"}
+,{"stream_name":"stderr","time":29.202123762,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":29.202129202,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":31.924670624,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":31.924749544,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":31.92475401,"data":"\n"}
+,{"stream_name":"stderr","time":31.924756651,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":31.924759935,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":34.426828337,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":34.426882874,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":34.426889648,"data":"\n"}
+,{"stream_name":"stderr","time":34.426893544,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":34.426898017,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":36.903660402,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":36.903699989,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":36.903705892,"data":"\n"}
+,{"stream_name":"stderr","time":36.903709765,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":36.903714764,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":39.216704913,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":39.216741278,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":39.216745872,"data":"\n"}
+,{"stream_name":"stderr","time":39.21674857,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":39.216752308,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":42.127840876,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":42.127885093,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":42.127892432,"data":"\n"}
+,{"stream_name":"stderr","time":42.127897587,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":42.12792194,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":44.611547909,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":44.611586861,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":44.611593048,"data":"\n"}
+,{"stream_name":"stderr","time":44.61159708,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":44.611601901,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":47.176676123,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":47.176707092,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":47.176712298,"data":"\n"}
+,{"stream_name":"stderr","time":47.176716298,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":47.176721104,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":49.647010513,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":49.647050187,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":49.647056166,"data":"\n"}
+,{"stream_name":"stderr","time":49.647060342,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":49.647065736,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":52.190314208,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":52.190356349,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":52.190361863,"data":"\n"}
+,{"stream_name":"stderr","time":52.190365724,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":52.190391999,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":54.544846581,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":54.544886977,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":54.544892675,"data":"\n"}
+,{"stream_name":"stderr","time":54.544895343,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":54.54489865,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":56.87323221,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":56.873275855,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":56.873281838,"data":"\n"}
+,{"stream_name":"stderr","time":56.873285416,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":56.873289548,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":59.21994294,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":59.219985204,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":59.219991394,"data":"\n"}
+,{"stream_name":"stderr","time":59.219995281,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":59.219999898,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":61.688190165,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":61.688244118,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":61.688250757,"data":"\n"}
+,{"stream_name":"stderr","time":61.688255036,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":61.688280716,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":64.215710401,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":64.215757169,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":64.215762594,"data":"\n"}
+,{"stream_name":"stderr","time":64.215766574,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":64.215771651,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":66.473681582,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":66.473722727,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":66.473728215,"data":"\n"}
+,{"stream_name":"stderr","time":66.473732177,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":66.473737427,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":68.786051899,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":68.78608875,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":68.786093978,"data":"\n"}
+,{"stream_name":"stderr","time":68.78609791,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":68.786106481,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":71.058826422,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":71.058872783,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":71.058879405,"data":"\n"}
+,{"stream_name":"stderr","time":71.058883809,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":71.058909013,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":73.308071393,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":73.308114496,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":73.308121592,"data":"\n"}
+,{"stream_name":"stderr","time":73.308126813,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":73.308133297,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":76.61860799,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":76.618645971,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":76.618654453,"data":"\n"}
+,{"stream_name":"stderr","time":76.618658405,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":76.618663895,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":79.252226345,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":79.252257587,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":79.252264623,"data":"\n"}
+,{"stream_name":"stderr","time":79.252269855,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":79.252276013,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":81.741122339,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":81.741170434,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":81.741176003,"data":"\n"}
+,{"stream_name":"stderr","time":81.741179503,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":81.741198701,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":84.293617961,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":84.293660779,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":84.293667082,"data":"\n"}
+,{"stream_name":"stderr","time":84.293671155,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":84.293676703,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":86.529876456,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":86.529921712,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":86.529927935,"data":"\n"}
+,{"stream_name":"stderr","time":86.529931905,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":86.529937139,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":88.942528711,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":88.942570322,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":88.942574662,"data":"\n"}
+,{"stream_name":"stderr","time":88.942577979,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":88.94258288,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":91.35792008600001,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":91.357959132,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":91.357965036,"data":"\n"}
+,{"stream_name":"stderr","time":91.357969448,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":91.357996444,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":93.870486127,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":93.870522919,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":93.870528719,"data":"\n"}
+,{"stream_name":"stderr","time":93.870532926,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":93.870537906,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":96.369402735,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":96.369442292,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":96.369448203,"data":"\n"}
+,{"stream_name":"stderr","time":96.369452116,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":96.369455751,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stdout","time":108.91036663,"data":"initial {'top1': 0.1341552734375, 'avg_rank': 179.8426513671875, 'mean_cos': 0.21076570451259613}\n"}
+,{"stream_name":"stdout","time":187.5236196,"data":"refine1 {'top1': 0.9500732421875, 'avg_rank': 1.1668701171875, 'mean_cos': 0.4928956627845764}\n"}
+,{"stream_name":"stdout","time":224.84499744,"data":"refine2 {'top1': 0.96044921875, 'avg_rank': 1.102783203125, 'mean_cos': 0.5109983682632446} self-consistency 0.8177\n"}
+,{"stream_name":"stdout","time":224.84502752,"data":"{\n"}
+,{"stream_name":"stdout","time":224.845034604,"data":" \"hist\": {\n"}
+,{"stream_name":"stdout","time":224.845039399,"data":"  \"initial\": {\n"}
+,{"stream_name":"stdout","time":224.84504457,"data":"   \"top1\": 0.1341552734375,\n"}
+,{"stream_name":"stdout","time":224.845049638,"data":"   \"avg_rank\": 179.8426513671875,\n"}
+,{"stream_name":"stdout","time":224.845054733,"data":"   \"mean_cos\": 0.21076570451259613\n"}
+,{"stream_name":"stdout","time":224.845059232,"data":"  },\n"}
+,{"stream_name":"stdout","time":224.845063576,"data":"  \"refine1\": {\n"}
+,{"stream_name":"stdout","time":224.845067943,"data":"   \"top1\": 0.9500732421875,\n"}
+,{"stream_name":"stdout","time":224.845072284,"data":"   \"avg_rank\": 1.1668701171875,\n"}
+,{"stream_name":"stdout","time":224.845077002,"data":"   \"mean_cos\": 0.4928956627845764\n"}
+,{"stream_name":"stdout","time":224.845081417,"data":"  },\n"}
+,{"stream_name":"stdout","time":224.845094736,"data":"  \"self_consistency\": 0.8176998496055603,\n"}
+,{"stream_name":"stdout","time":224.845099231,"data":"  \"refine2\": {\n"}
+,{"stream_name":"stdout","time":224.845103067,"data":"   \"top1\": 0.96044921875,\n"}
+,{"stream_name":"stdout","time":224.845106491,"data":"   \"avg_rank\": 1.102783203125,\n"}
+,{"stream_name":"stdout","time":224.845110055,"data":"   \"mean_cos\": 0.5109983682632446\n"}
+,{"stream_name":"stdout","time":224.845113506,"data":"  }\n"}
+,{"stream_name":"stdout","time":224.845116733,"data":" },\n"}
+,{"stream_name":"stdout","time":224.845120033,"data":" \"minutes\": 3.4716630975405374,\n"}
+,{"stream_name":"stdout","time":224.845123472,"data":" \"paper_top1\": 0.96\n"}
+,{"stream_name":"stdout","time":224.845136173,"data":"}\n"}
+,{"stream_name":"stdout","time":224.845140259,"data":"CONTROL PASSED\n"}
+,{"stream_name":"stdout","time":238.584454365,"data":"leak check BEFORE filtering: {'victim_with_attacker_cos_gt_0.95': 0.0156, 'victim_with_attacker_cos_gt_0.90': 0.0226, 'median_nearest_cos': 0.4594520926475525}\n"}
+,{"stream_name":"stdout","time":250.380198786,"data":"dropping 715 of 19569 attacker passages; examples of the near-copies:\n"}
+,{"stream_name":"stdout","time":250.380240376,"data":"   cos 0.995\n"}
+,{"stream_name":"stdout","time":250.380245384,"data":"   VICTIM  : List of One Day International cricket double centuries The first player to score a double century in ODI's was Belinda Clark, in\n"}
+,{"stream_name":"stdout","time":250.380250102,"data":"   ATTACKER: List of One Day International cricket double centuries The first player to score a double century in ODI's is Belinda Clark, in\n"}
+,{"stream_name":"stdout","time":250.380254855,"data":"   cos 0.984\n"}
+,{"stream_name":"stdout","time":250.380258788,"data":"   VICTIM  : Manchester Arena bombing On 22 May 2017 at 22:31 BST (UTC+01:00),[4]:3.8 a suicide bomber\n"}
+,{"stream_name":"stdout","time":250.380263002,"data":"   ATTACKER: Manchester Arena bombing On 22 May 2017 at 22:31 BST (UTC+01:00),[3] a suicide bomber det\n"}
+,{"stream_name":"stdout","time":250.380267338,"data":"   cos 0.997\n"}
+,{"stream_name":"stdout","time":250.380271451,"data":"   VICTIM  : Sheree J. Wilson Sheree Julienne Wilson (born December 12, 1958[1]) is an American actress, producer, businesswoman,\n"}
+,{"stream_name":"stdout","time":250.380275881,"data":"   ATTACKER: Sheree J. Wilson Sheree Julienne Wilson (born on December 12, 1958[1]) is an American actress, producer, businesswoman\n"}
+,{"stream_name":"stdout","time":261.167597267,"data":"leak check AFTER filtering: {'victim_with_attacker_cos_gt_0.95': 0.0156, 'victim_with_attacker_cos_gt_0.90': 0.0226, 'median_nearest_cos': 0.4594520926475525, 'attacker_dropped': 715, 'attacker_kept': 18854, 'after_victim_with_attacker_cos_gt_0.95': 0.0, 'eval_passages_that_had_a_near_copy': 129}\n"}
+,{"stream_name":"stdout","time":262.199671126,"data":"fp32 (50000, 1024)\n"}
+,{"stream_name":"stdout","time":262.199712365,"data":"attacker (same source) (18854, 768) | eval (8192, 768)\n"}
+,{"stream_name":"stdout","time":263.022544844,"data":"\n"}
+,{"stream_name":"stdout","time":263.022580382,"data":"=== fp32 seed 0 ===\n"}
+,{"stream_name":"stderr","time":264.778014693,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":264.778062803,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":264.778071013,"data":"\n"}
+,{"stream_name":"stderr","time":264.778093632,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":264.778099023,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":267.325356344,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":267.325396384,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":267.325402832,"data":"\n"}
+,{"stream_name":"stderr","time":267.325407076,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":267.325411826,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":269.977883272,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":269.977922521,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":269.977926834,"data":"\n"}
+,{"stream_name":"stderr","time":269.977929564,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":269.977932623,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":273.475574532,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":273.475607574,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":273.475611232,"data":"\n"}
+,{"stream_name":"stderr","time":273.475613923,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":273.475617258,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":276.203920493,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":276.20396074,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":276.203982587,"data":"\n"}
+,{"stream_name":"stderr","time":276.203986116,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":276.203989299,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":279.031620558,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":279.031658917,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":279.031665321,"data":"\n"}
+,{"stream_name":"stderr","time":279.031669543,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":279.031674863,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":281.909414555,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":281.90948137,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":281.909491371,"data":"\n"}
+,{"stream_name":"stderr","time":281.909495255,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":281.909500105,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":284.654957713,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":284.654994214,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":284.654999231,"data":"\n"}
+,{"stream_name":"stderr","time":284.655003065,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":284.655006622,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":287.378631534,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":287.378676424,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":287.378703594,"data":"\n"}
+,{"stream_name":"stderr","time":287.378707679,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":287.378723529,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":289.891256121,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":289.891298865,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":289.891305276,"data":"\n"}
+,{"stream_name":"stderr","time":289.891309515,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":289.891314625,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":292.50660632,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":292.506639573,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":292.506646565,"data":"\n"}
+,{"stream_name":"stderr","time":292.506651533,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":292.506657446,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":295.311375874,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":295.311447897,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":295.311457075,"data":"\n"}
+,{"stream_name":"stderr","time":295.311462567,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":295.311481322,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":297.992007687,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":297.992078333,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":297.992084547,"data":"\n"}
+,{"stream_name":"stderr","time":297.9920873,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":297.992090335,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":300.62293068,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":300.622978746,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":300.622985347,"data":"\n"}
+,{"stream_name":"stderr","time":300.622989538,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":300.622994938,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":303.232982755,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":303.233020632,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":303.233026636,"data":"\n"}
+,{"stream_name":"stderr","time":303.233030726,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":303.233036418,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":305.782938211,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":305.782975362,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":305.782981202,"data":"\n"}
+,{"stream_name":"stderr","time":305.782985332,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":305.782990507,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":308.579272326,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":308.579342492,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":308.57934956,"data":"\n"}
+,{"stream_name":"stderr","time":308.579353231,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":308.579357157,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":311.335547566,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":311.335588174,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":311.335593747,"data":"\n"}
+,{"stream_name":"stderr","time":311.335597841,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":311.335602822,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":314.167838461,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":314.167876809,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":314.167883127,"data":"\n"}
+,{"stream_name":"stderr","time":314.167887298,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":314.167892481,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":316.977017039,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":316.977059925,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":316.977066225,"data":"\n"}
+,{"stream_name":"stderr","time":316.977070501,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":316.977075135,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":319.867785256,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":319.867847225,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":319.867853728,"data":"\n"}
+,{"stream_name":"stderr","time":319.867857856,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":319.867863234,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":323.124723091,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":323.124752159,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":323.124757955,"data":"\n"}
+,{"stream_name":"stderr","time":323.12476222,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":323.124767413,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":326.338955774,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":326.33899853,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":326.339004743,"data":"\n"}
+,{"stream_name":"stderr","time":326.339009545,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":326.339015858,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":329.10762661,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":329.107673358,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":329.107681028,"data":"\n"}
+,{"stream_name":"stderr","time":329.107686166,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":329.107692324,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":331.713054634,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":331.713124439,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":331.713131241,"data":"\n"}
+,{"stream_name":"stderr","time":331.71313547,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":331.713140546,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":334.622494601,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":334.622533404,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":334.622539576,"data":"\n"}
+,{"stream_name":"stderr","time":334.622543791,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":334.62254929,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":337.442732856,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":337.442774328,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":337.442780467,"data":"\n"}
+,{"stream_name":"stderr","time":337.442785191,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":337.442790866,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":340.20806424,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":340.208115018,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":340.208121992,"data":"\n"}
+,{"stream_name":"stderr","time":340.208126105,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":340.208131736,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":343.158305641,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":343.158360949,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":343.158367266,"data":"\n"}
+,{"stream_name":"stderr","time":343.158371189,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":343.158376695,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":345.745263781,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":345.745310704,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":345.745317221,"data":"\n"}
+,{"stream_name":"stderr","time":345.745321403,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":345.74532745,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stdout","time":364.53117202,"data":"initial {'top1': 0.037841796875, 'avg_rank': 351.3892822265625, 'mean_cos': 0.16169831156730652}\n"}
+,{"stream_name":"stdout","time":442.751302466,"data":"refine1 {'top1': 0.9404296875, 'avg_rank': 1.2957763671875, 'mean_cos': 0.48733073472976685}\n"}
+,{"stream_name":"stdout","time":546.95909528,"data":"refine2 {'top1': 0.9510498046875, 'avg_rank': 1.1966552734375, 'mean_cos': 0.5075104236602783} self-consistency 0.7854\n"}
+,{"stream_name":"stdout","time":548.067016614,"data":"fp32 seed 0: top-1 0.9510  rank 1.2  cos 0.508  self-consistency 0.785  (4.8 min)\n"}
+,{"stream_name":"stdout","time":548.067061056,"data":"\n"}
+,{"stream_name":"stdout","time":548.067084935,"data":"=== fp32 seed 1 ===\n"}
+,{"stream_name":"stderr","time":550.214221856,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":550.214258596,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":550.214264451,"data":"\n"}
+,{"stream_name":"stderr","time":550.214269336,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":550.214276211,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":553.330362872,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":553.330426402,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":553.330433514,"data":"\n"}
+,{"stream_name":"stderr","time":553.330437586,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":553.33044275,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":556.460003171,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":556.460054537,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":556.460060851,"data":"\n"}
+,{"stream_name":"stderr","time":556.460065103,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":556.46007026,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":559.209007506,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":559.20904613,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":559.20905188,"data":"\n"}
+,{"stream_name":"stderr","time":559.209056013,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":559.209060891,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":561.97404621,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":561.974079766,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":561.974085608,"data":"\n"}
+,{"stream_name":"stderr","time":561.974090034,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":561.974095498,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":564.662135225,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":564.662217951,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":564.66222488,"data":"\n"}
+,{"stream_name":"stderr","time":564.662228668,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":564.662233039,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":567.524267062,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":567.524312294,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":567.524318562,"data":"\n"}
+,{"stream_name":"stderr","time":567.524322938,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":567.524328254,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":570.251309146,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":570.251351481,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":570.251357739,"data":"\n"}
+,{"stream_name":"stderr","time":570.251361809,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":570.251366661,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":572.750445634,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":572.750502083,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":572.75051464,"data":"\n"}
+,{"stream_name":"stderr","time":572.750518666,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":572.750523626,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":575.478683018,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":575.478744142,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":575.478750606,"data":"\n"}
+,{"stream_name":"stderr","time":575.478754128,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":575.478758323,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":578.209483538,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":578.209518446,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":578.209525372,"data":"\n"}
+,{"stream_name":"stderr","time":578.209530624,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":578.209536646,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":580.703153368,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":580.703190036,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":580.703197563,"data":"\n"}
+,{"stream_name":"stderr","time":580.703202623,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":580.70320857,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":583.420371071,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":583.420413794,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":583.420429456,"data":"\n"}
+,{"stream_name":"stderr","time":583.420435341,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":583.420442467,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":586.315754184,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":586.315814185,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":586.315820826,"data":"\n"}
+,{"stream_name":"stderr","time":586.315824771,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":586.315830015,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":588.94960012,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":588.9496514,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":588.949657763,"data":"\n"}
+,{"stream_name":"stderr","time":588.949661784,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":588.949667305,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":591.609322765,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":591.609364568,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":591.609370227,"data":"\n"}
+,{"stream_name":"stderr","time":591.609374061,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":591.609378622,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":594.133541379,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":594.133576417,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":594.13358113,"data":"\n"}
+,{"stream_name":"stderr","time":594.133584969,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":594.133589442,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":597.118574943,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":597.118636232,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":597.118642261,"data":"\n"}
+,{"stream_name":"stderr","time":597.118646204,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":597.118649451,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":599.892090918,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":599.892123578,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":599.892127403,"data":"\n"}
+,{"stream_name":"stderr","time":599.892130079,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":599.892133376,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":602.280949145,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":602.281071619,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":602.281081643,"data":"\n"}
+,{"stream_name":"stderr","time":602.281086573,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":602.28109172,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":604.874890443,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":604.874930126,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":604.874936214,"data":"\n"}
+,{"stream_name":"stderr","time":604.874940401,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":604.874945563,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":607.416843552,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":607.416881302,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":607.416887206,"data":"\n"}
+,{"stream_name":"stderr","time":607.416891293,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":607.416896513,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":610.131033367,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":610.13109566,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":610.131103869,"data":"\n"}
+,{"stream_name":"stderr","time":610.131109079,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":610.131115008,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":613.174160306,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":613.174207404,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":613.174215123,"data":"\n"}
+,{"stream_name":"stderr","time":613.174220259,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":613.174226502,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":615.938844574,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":615.938888216,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":615.93889586,"data":"\n"}
+,{"stream_name":"stderr","time":615.938901076,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":615.938907542,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":619.37967549,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":619.37971212,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":619.379716302,"data":"\n"}
+,{"stream_name":"stderr","time":619.379719013,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":619.379722261,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":622.409537053,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":622.4095735,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":622.409579535,"data":"\n"}
+,{"stream_name":"stderr","time":622.409583661,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":622.409589149,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":625.357961052,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":625.35799685,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":625.358001364,"data":"\n"}
+,{"stream_name":"stderr","time":625.358004328,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":625.358007872,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":628.204677358,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":628.204747624,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":628.204754067,"data":"\n"}
+,{"stream_name":"stderr","time":628.204757005,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":628.204777379,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":630.90414534,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":630.90418352,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":630.904189998,"data":"\n"}
+,{"stream_name":"stderr","time":630.904193856,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":630.904198904,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stdout","time":649.282622137,"data":"initial {'top1': 0.01025390625, 'avg_rank': 1068.7020263671875, 'mean_cos': 0.11092939972877502}\n"}
+,{"stream_name":"stdout","time":727.570539064,"data":"refine1 {'top1': 0.9017333984375, 'avg_rank': 2.065673828125, 'mean_cos': 0.4693530797958374}\n"}
+,{"stream_name":"stdout","time":831.264304932,"data":"refine2 {'top1': 0.923583984375, 'avg_rank': 1.4432373046875, 'mean_cos': 0.49531617760658264} self-consistency 0.7667\n"}
+,{"stream_name":"stdout","time":832.390878265,"data":"fp32 seed 1: top-1 0.9236  rank 1.4  cos 0.495  self-consistency 0.767  (4.7 min)\n"}
+,{"stream_name":"stdout","time":832.390914206,"data":"\n"}
+,{"stream_name":"stdout","time":832.390920257,"data":"=== fp32 seed 2 ===\n"}
+,{"stream_name":"stderr","time":834.313087367,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":834.313123603,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":834.313128537,"data":"\n"}
+,{"stream_name":"stderr","time":834.313132073,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":834.313136064,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":837.503598759,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":837.503641532,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":837.503648804,"data":"\n"}
+,{"stream_name":"stderr","time":837.503654364,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":837.503661183,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":840.544660159,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":840.544723106,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":840.54473019,"data":"\n"}
+,{"stream_name":"stderr","time":840.544733999,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":840.544739379,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":843.217978442,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":843.218023529,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":843.218031777,"data":"\n"}
+,{"stream_name":"stderr","time":843.218036554,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":843.218041873,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":846.375255492,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":846.37529347,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":846.375321223,"data":"\n"}
+,{"stream_name":"stderr","time":846.375324391,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":846.375327641,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":849.079421206,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":849.079483667,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":849.079502125,"data":"\n"}
+,{"stream_name":"stderr","time":849.079506219,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":849.079510405,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":851.75513392,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":851.755174844,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":851.755181347,"data":"\n"}
+,{"stream_name":"stderr","time":851.755186101,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":851.755191301,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":854.573223026,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":854.573263542,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":854.573269806,"data":"\n"}
+,{"stream_name":"stderr","time":854.573278288,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":854.573282599,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":857.171225873,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":857.171270294,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":857.171276437,"data":"\n"}
+,{"stream_name":"stderr","time":857.171280246,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":857.171284958,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":860.345078835,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":860.345114578,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":860.345120382,"data":"\n"}
+,{"stream_name":"stderr","time":860.345124368,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":860.345129144,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":863.088109194,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":863.0881435,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":863.088150761,"data":"\n"}
+,{"stream_name":"stderr","time":863.08815601,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":863.088162885,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":865.948151849,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":865.948191632,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":865.948199214,"data":"\n"}
+,{"stream_name":"stderr","time":865.948204457,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":865.948210618,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":868.923646287,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":868.92369083,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":868.92370407,"data":"\n"}
+,{"stream_name":"stderr","time":868.923709112,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":868.923714228,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":871.850691514,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":871.850729562,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":871.850736917,"data":"\n"}
+,{"stream_name":"stderr","time":871.850742188,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":871.850767151,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":875.098500644,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":875.098542053,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":875.098548305,"data":"\n"}
+,{"stream_name":"stderr","time":875.098552505,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":875.098557638,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":877.75304424,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":877.753081899,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":877.753087549,"data":"\n"}
+,{"stream_name":"stderr","time":877.753091492,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":877.753096585,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":880.602462301,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":880.602522939,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":880.602528744,"data":"\n"}
+,{"stream_name":"stderr","time":880.602532359,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":880.602536626,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":883.488486686,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":883.488527412,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":883.488531687,"data":"\n"}
+,{"stream_name":"stderr","time":883.488534427,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":883.488552493,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":886.303901988,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":886.30394104,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":886.303947469,"data":"\n"}
+,{"stream_name":"stderr","time":886.30395153,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":886.303956666,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":888.857914982,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":888.857968407,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":888.857974367,"data":"\n"}
+,{"stream_name":"stderr","time":888.857978007,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":888.85798321,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":891.436388659,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":891.436428772,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":891.436434848,"data":"\n"}
+,{"stream_name":"stderr","time":891.436439166,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":891.436444187,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":894.241273277,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":894.241318239,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":894.241325158,"data":"\n"}
+,{"stream_name":"stderr","time":894.241329793,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":894.241345881,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":896.927725921,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":896.927768379,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":896.927774452,"data":"\n"}
+,{"stream_name":"stderr","time":896.927778495,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":896.927783564,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":899.600164534,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":899.600202086,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":899.600207312,"data":"\n"}
+,{"stream_name":"stderr","time":899.600211586,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":899.600216657,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":902.282954217,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":902.28299119,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":902.282996744,"data":"\n"}
+,{"stream_name":"stderr","time":902.283000891,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":902.283005572,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":904.973573055,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":904.973616327,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":904.973622317,"data":"\n"}
+,{"stream_name":"stderr","time":904.973626196,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":904.973649576,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":907.428599097,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":907.428648339,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":907.428655775,"data":"\n"}
+,{"stream_name":"stderr","time":907.428659856,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":907.428668999,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":910.135036927,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":910.135081782,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":910.135088272,"data":"\n"}
+,{"stream_name":"stderr","time":910.135092375,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":910.1350977,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":913.066362975,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":913.0664016,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":913.066407604,"data":"\n"}
+,{"stream_name":"stderr","time":913.06641164,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":913.066417061,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":916.0662765,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":916.066314179,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":916.066320313,"data":"\n"}
+,{"stream_name":"stderr","time":916.066324426,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":916.066348984,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stdout","time":934.820894727,"data":"initial {'top1': 0.0128173828125, 'avg_rank': 826.6895751953125, 'mean_cos': 0.12155257910490036}\n"}
+,{"stream_name":"stdout","time":1013.064547339,"data":"refine1 {'top1': 0.93310546875, 'avg_rank': 1.321044921875, 'mean_cos': 0.48103275895118713}\n"}
+,{"stream_name":"stdout","time":1123.958458794,"data":"refine2 {'top1': 0.9461669921875, 'avg_rank': 1.204833984375, 'mean_cos': 0.5036942958831787} self-consistency 0.7822\n"}
+,{"stream_name":"stdout","time":1125.078439188,"data":"fp32 seed 2: top-1 0.9462  rank 1.2  cos 0.504  self-consistency 0.782  (4.9 min)\n"}
+,{"stream_name":"stdout","time":1125.078519196,"data":"\n"}
+,{"stream_name":"stdout","time":1125.078526433,"data":"=== fp32 seed 3 ===\n"}
+,{"stream_name":"stderr","time":1127.146150147,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1127.146191251,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1127.146198768,"data":"\n"}
+,{"stream_name":"stderr","time":1127.146204094,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1127.146210736,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1130.423778075,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1130.423837776,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1130.423845192,"data":"\n"}
+,{"stream_name":"stderr","time":1130.423848728,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1130.423852572,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1133.379515732,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1133.379555285,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1133.379560332,"data":"\n"}
+,{"stream_name":"stderr","time":1133.379563732,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1133.379581274,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1135.869494593,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1135.869535193,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1135.869541042,"data":"\n"}
+,{"stream_name":"stderr","time":1135.869545142,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1135.869549894,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1138.614812299,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1138.614853619,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1138.614860375,"data":"\n"}
+,{"stream_name":"stderr","time":1138.61486483,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1138.614870759,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1141.236557099,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1141.23659566,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1141.236601914,"data":"\n"}
+,{"stream_name":"stderr","time":1141.236606009,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1141.236611346,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1144.172298032,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1144.172340351,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1144.172346343,"data":"\n"}
+,{"stream_name":"stderr","time":1144.172350455,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1144.17238355,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1146.945788982,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1146.945838971,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1146.945845213,"data":"\n"}
+,{"stream_name":"stderr","time":1146.945849823,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1146.94585555,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1149.958050574,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1149.958097869,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1149.958104189,"data":"\n"}
+,{"stream_name":"stderr","time":1149.958108543,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1149.958113766,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1152.768278303,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1152.768317932,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1152.768323904,"data":"\n"}
+,{"stream_name":"stderr","time":1152.768328018,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1152.768333779,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1155.38500543,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1155.385044888,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1155.385052411,"data":"\n"}
+,{"stream_name":"stderr","time":1155.385057489,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1155.385073434,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1158.14396343,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1158.144003249,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1158.144009417,"data":"\n"}
+,{"stream_name":"stderr","time":1158.144013609,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1158.144018229,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1161.021900235,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1161.021939111,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1161.0219454,"data":"\n"}
+,{"stream_name":"stderr","time":1161.021949679,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1161.021954842,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1163.795998217,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1163.796041647,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1163.796048021,"data":"\n"}
+,{"stream_name":"stderr","time":1163.796051809,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1163.796056877,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1166.533595121,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1166.533633172,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1166.533638911,"data":"\n"}
+,{"stream_name":"stderr","time":1166.533642955,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1166.53368454,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1169.411099188,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1169.411145044,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1169.411152126,"data":"\n"}
+,{"stream_name":"stderr","time":1169.411156429,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1169.411173462,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1172.070949075,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1172.07099325,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1172.070999981,"data":"\n"}
+,{"stream_name":"stderr","time":1172.071004066,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1172.071009262,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1174.675000171,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1174.675036017,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1174.675042498,"data":"\n"}
+,{"stream_name":"stderr","time":1174.675045439,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1174.675049866,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1177.402287259,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1177.402327586,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1177.402333969,"data":"\n"}
+,{"stream_name":"stderr","time":1177.402338147,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1177.402361398,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1179.975637749,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1179.975690793,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1179.975697294,"data":"\n"}
+,{"stream_name":"stderr","time":1179.975701481,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1179.975706894,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1182.542562338,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1182.542599619,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1182.542605991,"data":"\n"}
+,{"stream_name":"stderr","time":1182.54261015,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1182.542615663,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1185.372156855,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1185.372202957,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1185.372209224,"data":"\n"}
+,{"stream_name":"stderr","time":1185.372213421,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1185.37221826,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1188.489548102,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1188.489579425,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1188.489585656,"data":"\n"}
+,{"stream_name":"stderr","time":1188.489601861,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1188.489607063,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1191.20628446,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1191.206326439,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1191.206332018,"data":"\n"}
+,{"stream_name":"stderr","time":1191.206335749,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1191.206339866,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1194.101170331,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1194.101211511,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1194.101217751,"data":"\n"}
+,{"stream_name":"stderr","time":1194.101221874,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1194.101227338,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1196.774321362,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1196.774358365,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1196.774364157,"data":"\n"}
+,{"stream_name":"stderr","time":1196.774368106,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1196.774373569,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1199.371008304,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1199.371049778,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1199.371085633,"data":"\n"}
+,{"stream_name":"stderr","time":1199.371090683,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1199.371094621,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1202.052049395,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1202.052091717,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1202.052096509,"data":"\n"}
+,{"stream_name":"stderr","time":1202.052099151,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1202.052102423,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1205.574482021,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1205.574521676,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1205.574527613,"data":"\n"}
+,{"stream_name":"stderr","time":1205.57453196,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1205.574535256,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1208.275937723,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1208.275976861,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1208.27598324,"data":"\n"}
+,{"stream_name":"stderr","time":1208.275987492,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1208.275992927,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stdout","time":1226.872345743,"data":"initial {'top1': 0.0072021484375, 'avg_rank': 1011.2762451171875, 'mean_cos': 0.10477356612682343}\n"}
+,{"stream_name":"stdout","time":1305.478385315,"data":"refine1 {'top1': 0.9091796875, 'avg_rank': 1.9627685546875, 'mean_cos': 0.47592341899871826}\n"}
+,{"stream_name":"stdout","time":1411.084567231,"data":"refine2 {'top1': 0.92919921875, 'avg_rank': 1.54833984375, 'mean_cos': 0.49676668643951416} self-consistency 0.7657\n"}
+,{"stream_name":"stdout","time":1412.196706555,"data":"fp32 seed 3: top-1 0.9292  rank 1.5  cos 0.497  self-consistency 0.766  (4.8 min)\n"}
+,{"stream_name":"stdout","time":1412.196744508,"data":"\n"}
+,{"stream_name":"stdout","time":1412.196749821,"data":"=== fp32 seed 4 ===\n"}
+,{"stream_name":"stderr","time":1413.968333142,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1413.968381395,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1413.968388132,"data":"\n"}
+,{"stream_name":"stderr","time":1413.968391957,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1413.968396849,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1417.224222999,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1417.224270794,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1417.224277052,"data":"\n"}
+,{"stream_name":"stderr","time":1417.224281919,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1417.224287646,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1420.130362119,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1420.130402259,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1420.130408577,"data":"\n"}
+,{"stream_name":"stderr","time":1420.1304132,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1420.13041844,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1423.19588488,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1423.195940449,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1423.195946945,"data":"\n"}
+,{"stream_name":"stderr","time":1423.195969584,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1423.195975677,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1426.323166383,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1426.323216817,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1426.323223585,"data":"\n"}
+,{"stream_name":"stderr","time":1426.323227847,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1426.323233015,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1428.909777609,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1428.909818698,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1428.909824905,"data":"\n"}
+,{"stream_name":"stderr","time":1428.909829215,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1428.909834687,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1431.673379451,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1431.673416842,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1431.673422559,"data":"\n"}
+,{"stream_name":"stderr","time":1431.673426584,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1431.673431744,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1434.447287833,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1434.447340133,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1434.447360361,"data":"\n"}
+,{"stream_name":"stderr","time":1434.447363367,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1434.447366731,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1437.169285153,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1437.169326987,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1437.169333056,"data":"\n"}
+,{"stream_name":"stderr","time":1437.16933684,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1437.169341408,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1440.220867673,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1440.220906503,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1440.220912498,"data":"\n"}
+,{"stream_name":"stderr","time":1440.22091684,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1440.220922602,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1443.110560852,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1443.110597294,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1443.110604792,"data":"\n"}
+,{"stream_name":"stderr","time":1443.110609745,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1443.110615129,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1446.084112408,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1446.084154856,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1446.084181587,"data":"\n"}
+,{"stream_name":"stderr","time":1446.084185135,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1446.084188213,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1448.987140091,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1448.987178363,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1448.987183638,"data":"\n"}
+,{"stream_name":"stderr","time":1448.98718646,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1448.987190463,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1451.46467611,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1451.464714627,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1451.464721648,"data":"\n"}
+,{"stream_name":"stderr","time":1451.464725751,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1451.464731361,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1454.684910276,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1454.684952673,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1454.684957172,"data":"\n"}
+,{"stream_name":"stderr","time":1454.684961045,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1454.684966187,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1457.64778224,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1457.647824818,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1457.64785031,"data":"\n"}
+,{"stream_name":"stderr","time":1457.647855306,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1457.647860514,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1460.866237167,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1460.866277441,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1460.866284115,"data":"\n"}
+,{"stream_name":"stderr","time":1460.866287747,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1460.866292968,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1463.394911082,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1463.39495216,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1463.394957879,"data":"\n"}
+,{"stream_name":"stderr","time":1463.394961951,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1463.394967316,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1466.229822792,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1466.229860681,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1466.229866412,"data":"\n"}
+,{"stream_name":"stderr","time":1466.229870467,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1466.22987622,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1469.067429333,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1469.0675147,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1469.067663245,"data":"\n"}
+,{"stream_name":"stderr","time":1469.067672457,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1469.067678298,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1472.280877349,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1472.280912738,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1472.280918035,"data":"\n"}
+,{"stream_name":"stderr","time":1472.28092205,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1472.280927334,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1475.128429466,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1475.128495787,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1475.128505873,"data":"\n"}
+,{"stream_name":"stderr","time":1475.128511297,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1475.128517363,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1478.251628536,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1478.251666595,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1478.251673745,"data":"\n"}
+,{"stream_name":"stderr","time":1478.251688235,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1478.251694935,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1481.297407277,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1481.297490027,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1481.297499676,"data":"\n"}
+,{"stream_name":"stderr","time":1481.297503928,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1481.297508757,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1484.141006133,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1484.141041947,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1484.141048791,"data":"\n"}
+,{"stream_name":"stderr","time":1484.14105296,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1484.141058123,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1486.877071802,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1486.877128051,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1486.877134067,"data":"\n"}
+,{"stream_name":"stderr","time":1486.877137798,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1486.877141939,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1489.514042416,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1489.514080947,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1489.514087167,"data":"\n"}
+,{"stream_name":"stderr","time":1489.514091489,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1489.514096998,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1492.216299362,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1492.21635649,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1492.21636291,"data":"\n"}
+,{"stream_name":"stderr","time":1492.216367003,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1492.216372413,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1495.290798495,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1495.290833651,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1495.290839635,"data":"\n"}
+,{"stream_name":"stderr","time":1495.29084361,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1495.290848791,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1497.817324602,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1497.817367693,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stderr","time":1497.817373701,"data":"\n"}
+,{"stream_name":"stderr","time":1497.817377962,"data":"/usr/local/lib/python3.13/dist-packages/scipy/optimize/_qap.py:205: FutureWarning: The behavior when the rng option is an integer is changing: the value will be normalized using np.random.default_rng beginning in SciPy 1.17, and the resulting Generator will be used to generate random numbers.\n"}
+,{"stream_name":"stderr","time":1497.817382789,"data":"  _spec007_transition(options.get(\"rng\", None))\n"}
+,{"stream_name":"stdout","time":1516.495791348,"data":"initial {'top1': 0.008056640625, 'avg_rank': 1081.0074462890625, 'mean_cos': 0.1062680259346962}\n"}
+,{"stream_name":"stdout","time":1595.160117304,"data":"refine1 {'top1': 0.674560546875, 'avg_rank': 22.3880615234375, 'mean_cos': 0.389350563287735}\n"}
+,{"stream_name":"stdout","time":1702.490226949,"data":"refine2 {'top1': 0.7423095703125, 'avg_rank': 14.7618408203125, 'mean_cos': 0.4228636622428894} self-consistency 0.7067\n"}
+,{"stream_name":"stdout","time":1703.5613680229999,"data":"fp32 seed 4: top-1 0.7423  rank 14.8  cos 0.423  self-consistency 0.707  (4.9 min)\n"}
+,{"stream_name":"stdout","time":1703.898103049,"data":"scheme  seed  initial_top1  refine1_top1  refine2_top1  avg_rank  mean_cos  self_consistency  minutes\n"}
+,{"stream_name":"stdout","time":1703.898141819,"data":"  fp32     0        0.0378        0.9404        0.9510    1.1967    0.5075            0.7854   4.7508\n"}
+,{"stream_name":"stdout","time":1703.89814969,"data":"  fp32     1        0.0103        0.9017        0.9236    1.4432    0.4953            0.7667   4.7388\n"}
+,{"stream_name":"stdout","time":1703.89817362,"data":"  fp32     2        0.0128        0.9331        0.9462    1.2048    0.5037            0.7822   4.8781\n"}
+,{"stream_name":"stdout","time":1703.898176962,"data":"  fp32     3        0.0072        0.9092        0.9292    1.5483    0.4968            0.7657   4.7853\n"}
+,{"stream_name":"stdout","time":1703.898179928,"data":"  fp32     4        0.0081        0.6746        0.7423   14.7618    0.4229            0.7067   4.8571\n"}
+,{"stream_name":"stdout","time":1703.898182612,"data":"self-consistency vs top-1, Spearman: 0.9 | per-scheme pick for Phase D: {'fp32': {'seed': 0, 'picked_by': 'highest self_consistency', 'top1': 0.9510498046875}}\n"}
+,{"stream_name":"stdout","time":1703.898185448,"data":"        top1_mean  top1_std  rank_mean  cos_mean\n"}
+,{"stream_name":"stdout","time":1703.898187952,"data":"scheme                                          \n"}
+,{"stream_name":"stdout","time":1703.898190493,"data":"fp32       0.8985     0.088      4.031    0.4852\n"}
+,{"stream_name":"stdout","time":1704.433275795,"data":"['W_fp32_s0.npy', 'W_fp32_s1.npy', 'W_fp32_s2.npy', 'W_fp32_s3.npy', 'W_fp32_s4.npy', 'attacker_keep_mask.npy', 'control_e5_gtr.json', 'eval_idx.npy', 'mean_A_fp32.npy', 'mean_B.npy', 'phaseC_fp32.png', 'results_C_fp32.json', 'translated_eval_fp32.npy']\n"}
+,{"stream_name":"stderr","time":1709.107394152,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1709.107431706,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1709.305926933,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1709.305953595,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1710.184075322,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1710.315323636,"data":"[NbConvertApp] Writing 246422 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1713.518516803,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1714.299153725,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":1714.299185947,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":1714.299484307,"data":"[NbConvertApp] Writing 509392 bytes to __results__.html\n"}
+]

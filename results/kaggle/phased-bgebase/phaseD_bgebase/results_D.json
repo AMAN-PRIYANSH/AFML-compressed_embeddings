@@ -1,0 +1,69 @@
+{
+ "n": 1000,
+ "num_steps": 20,
+ "expected": {
+  "positive control (true GTR vectors)": "BLEU 85-95 (Phase A: 90.0 on 32 passages). GATE: must be > 80",
+  "scale control": "a little below the positive control; unknown how much (guess BLEU 50-90)",
+  "floor (random other passage)": "BLEU about 1-3, token F1 about 0.05-0.15",
+  "fp32 translated": "much lower than the controls: Phase C cosine to the true vector is only about 0.5. Guess: BLEU 5-25, token F1 0.2-0.45, entity recovery 0.1-0.4",
+  "int8 / int4": "same as fp32 within noise",
+  "pq128x8 / binary / svd256": "ordered like their Phase C top-1; lower if their translation was worse",
+  "top-1 hits vs misses": "hits recover more text than misses"
+ },
+ "controls": {
+  "positive_true_vectors": {
+   "name": "positive control",
+   "bleu": 85.52101493484679,
+   "token_f1": 0.9572118752094675,
+   "token_f1_ci95": [
+    0.9516981082458417,
+    0.9623510519341868
+   ],
+   "exact_match": 0.559,
+   "entity_recovery": 0.9063598593799936,
+   "gtr_cos_recovered_vs_true": 0.9910014867782593
+  },
+  "scale_control": {
+   "name": "scale control",
+   "bleu": 82.41232221427882,
+   "token_f1": 0.9449103297147545,
+   "token_f1_ci95": [
+    0.938825097925431,
+    0.9507028450760984
+   ],
+   "exact_match": 0.486,
+   "entity_recovery": 0.8887823585810163,
+   "gtr_cos_recovered_vs_true": 0.9885156154632568
+  },
+  "floor_random_other_passage": {
+   "name": "floor",
+   "bleu": 0.28768770141088995,
+   "token_f1": 0.10034000336922479,
+   "token_f1_ci95": [
+    0.09597393163984527,
+    0.10446752141479387
+   ],
+   "exact_match": 0.0,
+   "entity_recovery": 0.005433045701502077,
+   "gtr_cos_recovered_vs_true": 0.12638701498508453
+  }
+ },
+ "schemes": {
+  "fp32": {
+   "name": "fp32",
+   "bleu": 2.835846948183662,
+   "token_f1": 0.2359328648059161,
+   "token_f1_ci95": [
+    0.22902776237493327,
+    0.24334854758543514
+   ],
+   "exact_match": 0.0,
+   "entity_recovery": 0.13870246085011187,
+   "gtr_cos_recovered_vs_true": 0.48225513100624084,
+   "phaseC_top1_on_these_1000": 0.956,
+   "token_f1_when_hit": 0.23732722663782038,
+   "token_f1_when_miss": 0.20563718500363287,
+   "minutes": 5.733082171281179
+  }
+ }
+}

@@ -1,0 +1,204 @@
+{
+ "version": "v3_same_source_attacker_near_copies_removed",
+ "control": {
+  "hist": {
+   "initial": {
+    "top1": 0.1341552734375,
+    "avg_rank": 179.8426513671875,
+    "mean_cos": 0.21076570451259613
+   },
+   "refine1": {
+    "top1": 0.9500732421875,
+    "avg_rank": 1.1668701171875,
+    "mean_cos": 0.4928956627845764
+   },
+   "self_consistency": 0.8176998496055603,
+   "refine2": {
+    "top1": 0.96044921875,
+    "avg_rank": 1.102783203125,
+    "mean_cos": 0.5109983682632446
+   }
+  },
+  "minutes": 3.4716630975405374,
+  "paper_top1": 0.96
+ },
+ "leak_check": {
+  "victim_with_attacker_cos_gt_0.95": 0.0156,
+  "victim_with_attacker_cos_gt_0.90": 0.0226,
+  "median_nearest_cos": 0.4594520926475525,
+  "attacker_dropped": 715,
+  "attacker_kept": 18854,
+  "after_victim_with_attacker_cos_gt_0.95": 0.0,
+  "eval_passages_that_had_a_near_copy": 129
+ },
+ "runs": [
+  {
+   "scheme": "fp32",
+   "seed": 0,
+   "dim_victim": 1024,
+   "minutes": 4.750764008363088,
+   "initial": {
+    "top1": 0.037841796875,
+    "avg_rank": 351.3892822265625,
+    "mean_cos": 0.16169831156730652
+   },
+   "refine1": {
+    "top1": 0.9404296875,
+    "avg_rank": 1.2957763671875,
+    "mean_cos": 0.48733073472976685
+   },
+   "self_consistency": 0.7853642106056213,
+   "refine2": {
+    "top1": 0.9510498046875,
+    "avg_rank": 1.1966552734375,
+    "mean_cos": 0.5075104236602783
+   },
+   "refine2_without_former_near_copies": {
+    "top1": 0.9516308903694153,
+    "avg_rank": 1.1902517080307007,
+    "mean_cos": 0.5071012377738953
+   }
+  },
+  {
+   "scheme": "fp32",
+   "seed": 1,
+   "dim_victim": 1024,
+   "minutes": 4.7387642065684,
+   "initial": {
+    "top1": 0.01025390625,
+    "avg_rank": 1068.7020263671875,
+    "mean_cos": 0.11092939972877502
+   },
+   "refine1": {
+    "top1": 0.9017333984375,
+    "avg_rank": 2.065673828125,
+    "mean_cos": 0.4693530797958374
+   },
+   "self_consistency": 0.7666783928871155,
+   "refine2": {
+    "top1": 0.923583984375,
+    "avg_rank": 1.4432373046875,
+    "mean_cos": 0.49531617760658264
+   },
+   "refine2_without_former_near_copies": {
+    "top1": 0.9245938062667847,
+    "avg_rank": 1.4350738525390625,
+    "mean_cos": 0.49483367800712585
+   }
+  },
+  {
+   "scheme": "fp32",
+   "seed": 2,
+   "dim_victim": 1024,
+   "minutes": 4.87808217604955,
+   "initial": {
+    "top1": 0.0128173828125,
+    "avg_rank": 826.6895751953125,
+    "mean_cos": 0.12155257910490036
+   },
+   "refine1": {
+    "top1": 0.93310546875,
+    "avg_rank": 1.321044921875,
+    "mean_cos": 0.48103275895118713
+   },
+   "self_consistency": 0.7821508646011353,
+   "refine2": {
+    "top1": 0.9461669921875,
+    "avg_rank": 1.204833984375,
+    "mean_cos": 0.5036942958831787
+   },
+   "refine2_without_former_near_copies": {
+    "top1": 0.9477862119674683,
+    "avg_rank": 1.1979411840438843,
+    "mean_cos": 0.5033003687858582
+   }
+  },
+  {
+   "scheme": "fp32",
+   "seed": 3,
+   "dim_victim": 1024,
+   "minutes": 4.785305098692576,
+   "initial": {
+    "top1": 0.0072021484375,
+    "avg_rank": 1011.2762451171875,
+    "mean_cos": 0.10477356612682343
+   },
+   "refine1": {
+    "top1": 0.9091796875,
+    "avg_rank": 1.9627685546875,
+    "mean_cos": 0.47592341899871826
+   },
+   "self_consistency": 0.7657291293144226,
+   "refine2": {
+    "top1": 0.92919921875,
+    "avg_rank": 1.54833984375,
+    "mean_cos": 0.49676668643951416
+   },
+   "refine2_without_former_near_copies": {
+    "top1": 0.9304229021072388,
+    "avg_rank": 1.5355327129364014,
+    "mean_cos": 0.4963207542896271
+   }
+  },
+  {
+   "scheme": "fp32",
+   "seed": 4,
+   "dim_victim": 1024,
+   "minutes": 4.857135562102,
+   "initial": {
+    "top1": 0.008056640625,
+    "avg_rank": 1081.0074462890625,
+    "mean_cos": 0.1062680259346962
+   },
+   "refine1": {
+    "top1": 0.674560546875,
+    "avg_rank": 22.3880615234375,
+    "mean_cos": 0.389350563287735
+   },
+   "self_consistency": 0.7067080140113831,
+   "refine2": {
+    "top1": 0.7423095703125,
+    "avg_rank": 14.7618408203125,
+    "mean_cos": 0.4228636622428894
+   },
+   "refine2_without_former_near_copies": {
+    "top1": 0.745752215385437,
+    "avg_rank": 14.56505012512207,
+    "mean_cos": 0.42269250750541687
+   }
+  }
+ ],
+ "expected": {
+  "random guess": "top-1 = 1/8,192 = 0.00012, average rank = 4,096",
+  "control e5->gtr (paper Table 1)": "top-1 0.96, average rank 1.10, cosine 0.22 / 0.49 / 0.51 (initial / refine-1 / refine-2). GATE: ours must reach top-1 >= 0.85, else the notebook stops",
+  "fp32 BGE-large -> GTR (same-source attacker)": "v1 check already gave top-1 0.55 / 0.91 / 0.95 (seeds 0-2). Expect mean about 0.8 over 5 seeds, with 0-2 weak seeds",
+  "leak check": "before filtering 1.56% of victim passages have a near-copy (found 8 Nov); after dropping those attacker rows: 0",
+  "without former near-copies": "top-1 on the eval passages that never had a near-copy: within 0.02 of the full score",
+  "self-consistency": "should be higher for good seeds than for weak ones (Spearman > 0.5 across all runs)",
+  "int8, int4 vs fp32": "within 0.02 top-1 (decoded cosine 0.99997 / 0.992: almost the same vectors)",
+  "pq128x8 vs fp32": "lower; decoded cosine 0.90. Guess: 0.0-0.2 below fp32",
+  "binary vs fp32": "lower again; decoded cosine 0.79. Guess: 0.1-0.4 below fp32",
+  "svd256 vs fp32": "unknown: 256 -> 768 map, 89% of the energy kept",
+  "spread over seeds": "larger than the paper's 0.00-0.01 (v1 check: 0.55-0.95)",
+  "supervised upper bound (v1, with pairs)": "Procrustes 0.993, ridge 0.994, MLP 0.993 top-1"
+ },
+ "norm_B": 1.0450948476791382,
+ "n_attacker": 18854,
+ "phaseD_pick": {
+  "fp32": {
+   "seed": 0,
+   "picked_by": "highest self_consistency",
+   "top1": 0.9510498046875
+  }
+ },
+ "self_consistency_vs_top1_spearman": 0.8999999999999998,
+ "summary": [
+  {
+   "scheme": "fp32",
+   "top1_mean": 0.8984619140625,
+   "top1_std": 0.08803510023586598,
+   "rank_mean": 4.0309814453125,
+   "cos_mean": 0.48523024916648866
+  }
+ ]
+}

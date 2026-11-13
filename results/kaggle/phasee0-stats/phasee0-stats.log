@@ -1,0 +1,48 @@
+[{"stream_name":"stderr","time":10.715597413,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.7157028,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.71571703,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.715720799,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.667867931,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.667918753,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.667925243,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.667929714,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":25.47129291,"data":"\u001b[31m  ERROR: HTTP error 504 while getting https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":25.471356468,"data":"\u001b[0m\u001b[31mERROR: Could not install requirement en-core-web-sm==3.8.0 from https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl because of HTTP error 504 Server Error: Gateway Time-out for url: https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl for URL https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":27.778514705,"data":"\u001b[0m- int8 / int4 vs fp32: token F1 difference near 0, interval includes 0\n"}
+,{"stream_name":"stdout","time":27.778552966,"data":"- pq128x8 / binary vs fp32: about -0.06 to -0.07 token F1, interval excludes 0\n"}
+,{"stream_name":"stdout","time":27.778558795,"data":"- svd256 vs fp32: about +0.01; may or may not exclude 0 (Phase D intervals barely touched)\n"}
+,{"stream_name":"stdout","time":27.778563618,"data":"- every scheme vs floor: clearly above the floor (token F1 +0.07 or more, p \u003c 0.001)\n"}
+,{"stream_name":"stdout","time":34.317699289,"data":" scheme  seeds  top1_mean  top1_std  top1_min  top1_max  picked_seed  picked_top1  picked_cos  picked_is_best_seed  phaseD_pick_matches\n"}
+,{"stream_name":"stdout","time":34.317738302,"data":"   fp32      5     0.8985    0.0880    0.7423    0.9510            0       0.9510      0.5075                 True                 True\n"}
+,{"stream_name":"stdout","time":34.317745386,"data":"   int8      5     0.8770    0.1062    0.7184    0.9518            2       0.9481      0.5058                False                 True\n"}
+,{"stream_name":"stdout","time":34.317750763,"data":"   int4      5     0.9001    0.0494    0.8148    0.9408            1       0.9408      0.5005                 True                 True\n"}
+,{"stream_name":"stdout","time":34.317754501,"data":"pq128x8      5     0.4489    0.3930    0.0100    0.7625            0       0.7584      0.4018                False                 True\n"}
+,{"stream_name":"stdout","time":34.317759025,"data":" binary      5     0.6220    0.3510    0.0029    0.8414            0       0.8414      0.4039                 True                 True\n"}
+,{"stream_name":"stdout","time":34.31776363,"data":" svd256      5     0.6589    0.3519    0.0332    0.8564            1       0.8564      0.4792                 True                 True\n"}
+,{"stream_name":"stdout","time":51.987604083,"data":"{'fp32': np.float64(0.2379), 'int8': np.float64(0.2308), 'int4': np.float64(0.2276), 'pq128x8': np.float64(0.1746), 'binary': np.float64(0.1703), 'svd256': np.float64(0.2514), 'floor': np.float64(0.1003)}\n"}
+,{"stream_name":"stdout","time":55.706289727,"data":"      comparison  f1_diff  f1_ci_low  f1_ci_high  f1_p_holm  bleu_diff  bleu_ci_low  bleu_ci_high  entity_diff  entity_ci_low  entity_ci_high  significant_f1\n"}
+,{"stream_name":"stdout","time":55.706328898,"data":"    int8_vs_fp32  -0.0071    -0.0134     -0.0007     0.0296     0.0184      -0.2183        0.2608      -0.0105        -0.0226          0.0013            True\n"}
+,{"stream_name":"stdout","time":55.706336733,"data":"    int4_vs_fp32  -0.0103    -0.0169     -0.0038     0.0044    -0.2074      -0.4457        0.0238      -0.0201        -0.0325         -0.0081            True\n"}
+,{"stream_name":"stdout","time":55.706343329,"data":" pq128x8_vs_fp32  -0.0633    -0.0702     -0.0563     0.0005    -1.1902      -1.3957       -0.9927      -0.0505        -0.0628         -0.0382            True\n"}
+,{"stream_name":"stdout","time":55.706349124,"data":"  binary_vs_fp32  -0.0676    -0.0743     -0.0609     0.0005    -1.2803      -1.5036       -1.0695      -0.0652        -0.0776         -0.0530            True\n"}
+,{"stream_name":"stdout","time":55.70635489,"data":"  svd256_vs_fp32   0.0135     0.0070      0.0199     0.0005     0.5519       0.2968        0.8120       0.0048        -0.0074          0.0171            True\n"}
+,{"stream_name":"stdout","time":55.706360327,"data":"   fp32_vs_floor   0.1376     0.1301      0.1452     0.0006     2.0625       1.8444        2.2907       0.1314         0.1181          0.1447            True\n"}
+,{"stream_name":"stdout","time":55.70636569,"data":"   int8_vs_floor   0.1305     0.1233      0.1378     0.0006     2.0809       1.8578        2.3140       0.1208         0.1076          0.1343            True\n"}
+,{"stream_name":"stdout","time":55.706371192,"data":"   int4_vs_floor   0.1273     0.1201      0.1345     0.0006     1.8551       1.6395        2.0842       0.1112         0.0982          0.1243            True\n"}
+,{"stream_name":"stdout","time":55.706376532,"data":"pq128x8_vs_floor   0.0743     0.0673      0.0814     0.0006     0.8723       0.7343        1.0170       0.0809         0.0695          0.0920            True\n"}
+,{"stream_name":"stdout","time":55.706381873,"data":" binary_vs_floor   0.0700     0.0634      0.0764     0.0006     0.7822       0.6527        0.9157       0.0662         0.0557          0.0768            True\n"}
+,{"stream_name":"stdout","time":55.706387329,"data":" svd256_vs_floor   0.1511     0.1435      0.1585     0.0006     2.6143       2.3628        2.8782       0.1361         0.1224          0.1500            True\n"}
+,{"stream_name":"stdout","time":55.706394531,"data":"\n"}
+,{"stream_name":"stdout","time":55.706405708,"data":"LIMITATION: differences are across passages for ONE seed per scheme (the attacker-picked one); seed-to-seed variation is shown in the Phase C table, not in these intervals.\n"}
+,{"stream_name":"stdout","time":56.758496223,"data":"['phaseE0_stats.png', 'results_E0.json', 'stats_inversion.csv', 'stats_translation.csv']\n"}
+,{"stream_name":"stderr","time":62.105233842,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":62.105308321,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":62.345458301,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":62.345508132,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":63.349237748,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":63.455088857,"data":"[NbConvertApp] Writing 91503 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":66.92061624,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":67.657405875,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":67.657464019,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":67.658022221,"data":"[NbConvertApp] Writing 337796 bytes to __results__.html\n"}
+]

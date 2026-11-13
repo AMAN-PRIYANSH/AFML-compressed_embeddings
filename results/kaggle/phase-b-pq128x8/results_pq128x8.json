@@ -1,0 +1,59 @@
+{
+ "scheme": "pq128x8",
+ "created_utc": "2026-11-05T19:00:45",
+ "input_manifest_created": "2026-11-03T04:17:31",
+ "faiss": "1.15.1",
+ "runs": [
+  {
+   "model": "bge-base",
+   "length": 32,
+   "scheme": "pq128x8",
+   "bytes_per_vector": 128,
+   "rel_error": 0.359183132648468,
+   "mean_cos_to_original": 0.9333133101463318,
+   "reencode_match": 1.0,
+   "search_agrees": 1.0,
+   "cos_in_expected_range": true,
+   "top10_in_expected_range": true,
+   "retrieval_top1": 0.5475,
+   "retrieval_top10": 0.8391,
+   "retrieval_top100": 0.9253,
+   "n_queries": 10000,
+   "seconds": 335.8
+  },
+  {
+   "model": "bge-large",
+   "length": 128,
+   "scheme": "pq128x8",
+   "bytes_per_vector": 128,
+   "rel_error": 0.4259498715400696,
+   "mean_cos_to_original": 0.9047626256942749,
+   "reencode_match": 1.0,
+   "search_agrees": 1.0,
+   "cos_in_expected_range": true,
+   "top10_in_expected_range": true,
+   "retrieval_top1": 0.6486,
+   "retrieval_top10": 0.9316,
+   "retrieval_top100": 0.9832,
+   "n_queries": 10000,
+   "seconds": 315.7
+  },
+  {
+   "model": "bge-large",
+   "length": 32,
+   "scheme": "pq128x8",
+   "bytes_per_vector": 128,
+   "rel_error": 0.4365297257900238,
+   "mean_cos_to_original": 0.8997102379798889,
+   "reencode_match": 1.0,
+   "search_agrees": 1.0,
+   "cos_in_expected_range": true,
+   "top10_in_expected_range": true,
+   "retrieval_top1": 0.5489,
+   "retrieval_top10": 0.8354,
+   "retrieval_top100": 0.9257,
+   "n_queries": 10000,
+   "seconds": 317.7
+  }
+ ]
+}
