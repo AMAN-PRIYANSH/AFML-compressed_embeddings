@@ -1,0 +1,56 @@
+{
+ "project": "Neural Nexus vector-DB compression",
+ "phase": "A2_attacker_extra",
+ "created_utc": "2026-11-04T18:47:59",
+ "source": "jxm/nq_corpus_dpr dev",
+ "n_extra": 200000,
+ "lengths": [
+  32,
+  128
+ ],
+ "phaseA_manifest_created": "2026-11-03T04:17:31",
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "4.46.3"
+ },
+ "files": {
+  "gtr_attextra_L128.npy": {
+   "shape": [
+    200000,
+    768
+   ],
+   "sha256": "1e9dac638368b62744fdcb0e2dc6699a5bf497cd9384d92312841d726e72f52a"
+  },
+  "gtr_attextra_L32.npy": {
+   "shape": [
+    200000,
+    768
+   ],
+   "sha256": "12c783977f1dc1d7b1a190ef0e4d45aba1bd2e07ba66bbe09183000a001b77bf"
+  }
+ },
+ "expected": {
+  "shape": "(200000, 768) for both lengths, no NaN",
+  "reembed_A2_max_abs_diff": "below 1e-3 (same GPU type, same code: usually about 1e-5)",
+  "reembed_phaseA_max_abs_diff": "below 1e-3 (shows this session reproduces Phase A exactly)",
+  "frac_near_copy_of_victim": "below 1% (727 exact text copies were already removed in A2)",
+  "norm_ratio_A2_over_phaseA": "anything; measured only. DPR mid-article chunks vs paragraph starts",
+  "nn_mixing_A2_share": "about 50% if A2 looks like Phase A's passages, lower if they differ (measured only)"
+ },
+ "checks": {
+  "L32": {
+   "reembed_A2_max_abs_diff": 0.0,
+   "reembed_phaseA_max_abs_diff": 0.0,
+   "frac_near_copy_of_victim": 0.0008,
+   "norm_ratio_A2_over_phaseA": 0.906196653842926,
+   "nn_mixing_A2_share": 0.343
+  },
+  "L128": {
+   "reembed_A2_max_abs_diff": 0.0,
+   "reembed_phaseA_max_abs_diff": 0.0,
+   "frac_near_copy_of_victim": 0.0006,
+   "norm_ratio_A2_over_phaseA": 0.8459421992301941,
+   "nn_mixing_A2_share": 0.3995
+  }
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "n": 200,
+ "expected": {
+  "true vectors": "BLEU >= 85 at 20 steps; higher with 50 steps + beam (vec2text paper ~97). GATE: 20-step BLEU > 75",
+  "translated sets": "small gain at most (token F1 +0.00 to +0.03): the translation, not the decoder, is the bottleneck"
+ },
+ "runs": [
+  {
+   "name": "true_vectors | 20 steps",
+   "n": 200,
+   "bleu": 84.41758703388055,
+   "token_f1": 0.9582018155681447,
+   "exact_match": 0.575,
+   "entity_recovery": 0.9066022544283414,
+   "gtr_cos_recovered_vs_true": 0.9911649823188782,
+   "set": "true_vectors",
+   "config": "20 steps",
+   "minutes": 1.142825996875763
+  },
+  {
+   "name": "true_vectors | 50 steps",
+   "n": 200,
+   "bleu": 84.8039031942824,
+   "token_f1": 0.9595798855305011,
+   "exact_match": 0.58,
+   "entity_recovery": 0.9082125603864735,
+   "gtr_cos_recovered_vs_true": 0.9908713698387146,
+   "set": "true_vectors",
+   "config": "50 steps",
+   "minutes": 3.099169981479645
+  },
+  {
+   "name": "true_vectors | 50 steps + beam 4",
+   "n": 200,
+   "bleu": 95.00882317209141,
+   "token_f1": 0.9903400958668562,
+   "exact_match": 0.845,
+   "entity_recovery": 0.9774557165861514,
+   "gtr_cos_recovered_vs_true": 0.997753918170929,
+   "set": "true_vectors",
+   "config": "50 steps + beam 4",
+   "minutes": 42.89718403418859
+  },
+  {
+   "name": "minivec2vec_fp32 | 20 steps",
+   "n": 200,
+   "bleu": 2.699513598387532,
+   "token_f1": 0.23961141939489805,
+   "exact_match": 0.0,
+   "entity_recovery": 0.14170692431561996,
+   "gtr_cos_recovered_vs_true": 0.4722480773925781,
+   "set": "minivec2vec_fp32",
+   "config": "20 steps",
+   "minutes": 1.2733303268750509
+  },
+  {
+   "name": "minivec2vec_fp32 | 50 steps",
+   "n": 200,
+   "bleu": 2.7783556550176405,
+   "token_f1": 0.24300358640225792,
+   "exact_match": 0.0,
+   "entity_recovery": 0.1497584541062802,
+   "gtr_cos_recovered_vs_true": 0.4766465723514557,
+   "set": "minivec2vec_fp32",
+   "config": "50 steps",
+   "minutes": 3.0936079740524294
+  },
+  {
+   "name": "minivec2vec_fp32 | 50 steps + beam 4",
+   "n": 200,
+   "bleu": 3.710297629249858,
+   "token_f1": 0.24697489011283374,
+   "exact_match": 0.0,
+   "entity_recovery": 0.15136876006441224,
+   "gtr_cos_recovered_vs_true": 0.5182216167449951,
+   "set": "minivec2vec_fp32",
+   "config": "50 steps + beam 4",
+   "minutes": 42.80704638560613
+  },
+  {
+   "name": "minivec2vec_pq128x8 | 20 steps",
+   "n": 200,
+   "bleu": 1.5071724567769231,
+   "token_f1": 0.17682688984615497,
+   "exact_match": 0.0,
+   "entity_recovery": 0.07246376811594203,
+   "gtr_cos_recovered_vs_true": 0.36926665902137756,
+   "set": "minivec2vec_pq128x8",
+   "config": "20 steps",
+   "minutes": 1.2716031233469645
+  },
+  {
+   "name": "minivec2vec_pq128x8 | 50 steps",
+   "n": 200,
+   "bleu": 1.4871067041195591,
+   "token_f1": 0.17555321686061848,
+   "exact_match": 0.0,
+   "entity_recovery": 0.07568438003220612,
+   "gtr_cos_recovered_vs_true": 0.36978158354759216,
+   "set": "minivec2vec_pq128x8",
+   "config": "50 steps",
+   "minutes": 3.086728843053182
+  },
+  {
+   "name": "minivec2vec_pq128x8 | 50 steps + beam 4",
+   "n": 200,
+   "bleu": 1.6598582899456749,
+   "token_f1": 0.18835693882492005,
+   "exact_match": 0.0,
+   "entity_recovery": 0.09500805152979067,
+   "gtr_cos_recovered_vs_true": 0.4093415439128876,
+   "set": "minivec2vec_pq128x8",
+   "config": "50 steps + beam 4",
+   "minutes": 42.70682257811229
+  },
+  {
+   "name": "supervised_mlp | 20 steps",
+   "n": 200,
+   "bleu": 7.739213688559274,
+   "token_f1": 0.39504183325207143,
+   "exact_match": 0.0,
+   "entity_recovery": 0.22705314009661837,
+   "gtr_cos_recovered_vs_true": 0.6484419107437134,
+   "set": "supervised_mlp",
+   "config": "20 steps",
+   "minutes": 1.269924783706665
+  },
+  {
+   "name": "supervised_mlp | 50 steps",
+   "n": 200,
+   "bleu": 7.735613025648511,
+   "token_f1": 0.39350775577718805,
+   "exact_match": 0.0,
+   "entity_recovery": 0.25442834138486314,
+   "gtr_cos_recovered_vs_true": 0.6428035497665405,
+   "set": "supervised_mlp",
+   "config": "50 steps",
+   "minutes": 3.08847393989563
+  },
+  {
+   "name": "supervised_mlp | 50 steps + beam 4",
+   "n": 200,
+   "bleu": 9.493735723516261,
+   "token_f1": 0.42166022740669545,
+   "exact_match": 0.0,
+   "entity_recovery": 0.2882447665056361,
+   "gtr_cos_recovered_vs_true": 0.6970133781433105,
+   "set": "supervised_mlp",
+   "config": "50 steps + beam 4",
+   "minutes": 42.838530377546945
+  }
+ ]
+}

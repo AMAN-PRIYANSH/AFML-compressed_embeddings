@@ -1,0 +1,24 @@
+{
+ "scheme": "pq128x8",
+ "seed": 5,
+ "budget_hours": 0.05,
+ "smoke_test": true,
+ "machine": "DESKTOP-T316MLM",
+ "gpu": "NVIDIA RTX 4500 Ada Generation",
+ "torch": "2.15.0+cu132",
+ "hours_used": 0.05258841137091319,
+ "epochs": 38,
+ "minutes_per_epoch_median": 0.05951553185780843,
+ "final": {
+  "top1": 0.0029296875,
+  "avg_rank": 479.7890625,
+  "mean_cos": 0.14266107976436615
+ },
+ "best_by_true_pairs": {
+  "top1": 0.0029296875,
+  "avg_rank": 483.6875,
+  "mean_cos": 0.020302921533584595,
+  "epoch": 2
+ },
+ "note": "final = honest unsupervised result; best = picked using the true pairs (optimistic upper bound)"
+}

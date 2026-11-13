@@ -1,0 +1,74 @@
+[{"stream_name":"stderr","time":7.657408887,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.657473717,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.657481206,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.657484919,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.279227303,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.2792634,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.279269076,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.279272857,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":26.116401323,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":26.116436349,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":26.116442269,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":26.116447078,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":26.116451363,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":26.116455496,"data":"diffusers 0.42.0 requires huggingface-hub\u003c3.0,\u003e=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":42.53358026,"data":"\u001b[0m/kaggle/input/notebooks/amanpriyansh/phasea-fp32-embeddings /kaggle/input/notebooks/amanpriyansh/phasea2-attacker-extra {32: (200000, 768), 128: (200000, 768)}\n"}
+,{"stream_name":"stdout","time":42.543442253,"data":"shape                            (200000, 768) for both lengths, no NaN\n"}
+,{"stream_name":"stdout","time":42.543465543,"data":"reembed_A2_max_abs_diff          below 1e-3 (same GPU type, same code: usually about 1e-5)\n"}
+,{"stream_name":"stdout","time":42.543470725,"data":"reembed_phaseA_max_abs_diff      below 1e-3 (shows this session reproduces Phase A exactly)\n"}
+,{"stream_name":"stdout","time":42.543475251,"data":"frac_near_copy_of_victim         below 1% (727 exact text copies were already removed in A2)\n"}
+,{"stream_name":"stdout","time":42.543480216,"data":"norm_ratio_A2_over_phaseA        anything; measured only. DPR mid-article chunks vs paragraph starts\n"}
+,{"stream_name":"stdout","time":42.543485305,"data":"nn_mixing_A2_share               about 50% if A2 looks like Phase A's passages, lower if they differ (measured only)\n"}
+,{"stream_name":"stderr","time":67.453546947,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":67.453597018,"data":"I0000 00:00:1793818044.919298      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":67.656240229,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":67.656280415,"data":"I0000 00:00:1793818044.919298      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":67.656287378,"data":"\n"}
+,{"stream_name":"stderr","time":67.656291493,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":67.656295641,"data":"I0000 00:00:1793818044.919298      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":93.070774788,"data":"L32: {\n"}
+,{"stream_name":"stdout","time":93.071113533,"data":" \"reembed_A2_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":93.071140892,"data":" \"reembed_phaseA_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":93.071146868,"data":" \"frac_near_copy_of_victim\": 0.0008,\n"}
+,{"stream_name":"stdout","time":93.071151834,"data":" \"norm_ratio_A2_over_phaseA\": 0.906196653842926,\n"}
+,{"stream_name":"stdout","time":93.071156829,"data":" \"nn_mixing_A2_share\": 0.343\n"}
+,{"stream_name":"stdout","time":93.071161592,"data":"}\n"}
+,{"stream_name":"stdout","time":100.891842767,"data":"L128: {\n"}
+,{"stream_name":"stdout","time":100.891902319,"data":" \"reembed_A2_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":100.891910753,"data":" \"reembed_phaseA_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":100.891915953,"data":" \"frac_near_copy_of_victim\": 0.0006,\n"}
+,{"stream_name":"stdout","time":100.891921166,"data":" \"norm_ratio_A2_over_phaseA\": 0.8459421992301941,\n"}
+,{"stream_name":"stdout","time":100.891926866,"data":" \"nn_mixing_A2_share\": 0.3995\n"}
+,{"stream_name":"stdout","time":100.891931911,"data":"}\n"}
+,{"stream_name":"stdout","time":100.891936443,"data":"ALL CHECKS PASSED\n"}
+,{"stream_name":"stderr","time":101.665688711,"data":"/tmp/ipykernel_23/2317971090.py:11: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n"}
+,{"stream_name":"stderr","time":101.665754288,"data":"  \"created_utc\": datetime.datetime.utcnow().isoformat(timespec=\"seconds\"),\n"}
+,{"stream_name":"stderr","time":101.665761897,"data":"\n"}
+,{"stream_name":"stderr","time":101.665767315,"data":"/tmp/ipykernel_23/2317971090.py:11: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n"}
+,{"stream_name":"stderr","time":101.665772946,"data":"  \"created_utc\": datetime.datetime.utcnow().isoformat(timespec=\"seconds\"),\n"}
+,{"stream_name":"stdout","time":104.751990919,"data":"{\n"}
+,{"stream_name":"stdout","time":104.752025458,"data":" \"L32\": {\n"}
+,{"stream_name":"stdout","time":104.752031613,"data":"  \"reembed_A2_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":104.75203697,"data":"  \"reembed_phaseA_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":104.75204395,"data":"  \"frac_near_copy_of_victim\": 0.0008,\n"}
+,{"stream_name":"stdout","time":104.752049102,"data":"  \"norm_ratio_A2_over_phaseA\": 0.906196653842926,\n"}
+,{"stream_name":"stdout","time":104.752056497,"data":"  \"nn_mixing_A2_share\": 0.343\n"}
+,{"stream_name":"stdout","time":104.752061478,"data":" },\n"}
+,{"stream_name":"stdout","time":104.752090031,"data":" \"L128\": {\n"}
+,{"stream_name":"stdout","time":104.752098162,"data":"  \"reembed_A2_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":104.752104061,"data":"  \"reembed_phaseA_max_abs_diff\": 0.0,\n"}
+,{"stream_name":"stdout","time":104.752128627,"data":"  \"frac_near_copy_of_victim\": 0.0006,\n"}
+,{"stream_name":"stdout","time":104.752133309,"data":"  \"norm_ratio_A2_over_phaseA\": 0.8459421992301941,\n"}
+,{"stream_name":"stdout","time":104.75213722,"data":"  \"nn_mixing_A2_share\": 0.3995\n"}
+,{"stream_name":"stdout","time":104.752140863,"data":" }\n"}
+,{"stream_name":"stdout","time":104.75214421,"data":"}\n"}
+,{"stream_name":"stdout","time":104.752262757,"data":"['__notebook__.ipynb', 'gtr_attextra_L128.npy', 'gtr_attextra_L32.npy', 'manifest_A2.json', 'texts_extra.json']\n"}
+,{"stream_name":"stderr","time":110.03216389,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":110.032198644,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":110.189795479,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":110.189846125,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":110.991579192,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":111.073858606,"data":"[NbConvertApp] Writing 86321 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":113.65900126,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":114.219966148,"data":"[NbConvertApp] Writing 370302 bytes to __results__.html\n"}
+]

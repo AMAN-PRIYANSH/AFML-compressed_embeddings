@@ -1,0 +1,35 @@
+{
+ "kind": "ours",
+ "scheme": "fp32",
+ "seed": 7,
+ "budget_hours": 0.06,
+ "smoke_test": true,
+ "resumed_from": "outputs\\smoke_resume\\resume.pt",
+ "machine": "DESKTOP-T316MLM",
+ "gpu": "NVIDIA RTX 4500 Ada Generation",
+ "torch": "2.15.0+cu132",
+ "n_victim_side": 5000,
+ "n_attacker_side": 20000,
+ "n_eval": 1024,
+ "steps_per_epoch": 19,
+ "train_hours": 0.060629929767714606,
+ "epochs": 49,
+ "steps": 931,
+ "minutes_per_epoch_median": 0.0549139142036438,
+ "authors_val_top1_last": 0.001953125,
+ "authors_val_top1_max": 0.0048828125,
+ "final": {
+  "top1": 0.0009765625,
+  "avg_rank": 505.5859375,
+  "mean_cos": 0.14107896387577057
+ },
+ "best_by_true_pairs": {
+  "top1": 0.0029296875,
+  "avg_rank": 517.9140625,
+  "mean_cos": -0.0051784757524728775,
+  "epoch": 3
+ },
+ "min_avg_rank_any_epoch": 502.52734375,
+ "max_top1_any_epoch": 0.0029296875,
+ "note": "final = honest unsupervised result; best = picked with the true pairs (upper bound)"
+}

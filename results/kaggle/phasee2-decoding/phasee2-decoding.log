@@ -1,0 +1,71 @@
+[{"stream_name":"stderr","time":6.333778252,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.333825265,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.333843853,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.333847947,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.877729297,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.877765613,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.877771169,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.877775078,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":25.523606055,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":25.523654612,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":25.523663322,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":25.523668472,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":25.523673145,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":25.523677061,"data":"diffusers 0.42.0 requires huggingface-hub\u003c3.0,\u003e=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":35.965475262,"data":"\u001b[0m\u001b[38;5;2m✔ Download and installation successful\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":35.965521698,"data":"You can now load the package via spacy.load('en_core_web_sm')\r\n"}
+,{"stream_name":"stdout","time":36.421390884,"data":"\u001b[38;5;3m⚠ Restart to reload dependencies\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":36.421427765,"data":"If you are in a Jupyter or Colab notebook, you may need to restart Python in\r\n"}
+,{"stream_name":"stdout","time":36.421433217,"data":"order to load all the package's dependencies. You can do this by selecting the\r\n"}
+,{"stream_name":"stdout","time":36.421436937,"data":"'Restart kernel' or 'Restart runtime' option.\r\n"}
+,{"stream_name":"stdout","time":44.798876306,"data":"- true vectors: BLEU \u003e= 85 at 20 steps; higher with 50 steps + beam (vec2text paper ~97). GATE: 20-step BLEU \u003e 75\n"}
+,{"stream_name":"stdout","time":44.798919272,"data":"- translated sets: small gain at most (token F1 +0.00 to +0.03): the translation, not the decoder, is the bottleneck\n"}
+,{"stream_name":"stderr","time":64.815473739,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":64.815513962,"data":"I0000 00:00:1794136076.671855      24 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":65.018360513,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":65.018398072,"data":"I0000 00:00:1794136076.671855      24 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":65.018402815,"data":"\n"}
+,{"stream_name":"stderr","time":65.018406242,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":65.018409962,"data":"I0000 00:00:1794136076.671855      24 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":221.305716896,"data":"{\"name\": \"true_vectors | 20 steps\", \"n\": 200, \"bleu\": 84.41758703388055, \"token_f1\": 0.9582018155681447, \"exact_match\": 0.575, \"entity_recovery\": 0.9066022544283414, \"gtr_cos_recovered_vs_true\": 0.9911649823188782}\n"}
+,{"stream_name":"stdout","time":221.305766045,"data":"  (1.1 min)\n"}
+,{"stream_name":"stdout","time":407.254089625,"data":"{\"name\": \"true_vectors | 50 steps\", \"n\": 200, \"bleu\": 84.8039031942824, \"token_f1\": 0.9595798855305011, \"exact_match\": 0.58, \"entity_recovery\": 0.9082125603864735, \"gtr_cos_recovered_vs_true\": 0.9908713698387146}\n"}
+,{"stream_name":"stdout","time":407.254172379,"data":"  (3.1 min)\n"}
+,{"stream_name":"stdout","time":2981.086785424,"data":"{\"name\": \"true_vectors | 50 steps + beam 4\", \"n\": 200, \"bleu\": 95.00882317209141, \"token_f1\": 0.9903400958668562, \"exact_match\": 0.845, \"entity_recovery\": 0.9774557165861514, \"gtr_cos_recovered_vs_true\": 0.997753918170929}\n"}
+,{"stream_name":"stdout","time":2981.086842291,"data":"  (42.9 min)\n"}
+,{"stream_name":"stdout","time":3057.488371868,"data":"{\"name\": \"minivec2vec_fp32 | 20 steps\", \"n\": 200, \"bleu\": 2.699513598387532, \"token_f1\": 0.23961141939489805, \"exact_match\": 0.0, \"entity_recovery\": 0.14170692431561996, \"gtr_cos_recovered_vs_true\": 0.4722480773925781}\n"}
+,{"stream_name":"stdout","time":3057.488413553,"data":"  (1.3 min)\n"}
+,{"stream_name":"stdout","time":3243.10325471,"data":"{\"name\": \"minivec2vec_fp32 | 50 steps\", \"n\": 200, \"bleu\": 2.7783556550176405, \"token_f1\": 0.24300358640225792, \"exact_match\": 0.0, \"entity_recovery\": 0.1497584541062802, \"gtr_cos_recovered_vs_true\": 0.4766465723514557}\n"}
+,{"stream_name":"stdout","time":3243.103306539,"data":"  (3.1 min)\n"}
+,{"stream_name":"stdout","time":5811.529607906,"data":"{\"name\": \"minivec2vec_fp32 | 50 steps + beam 4\", \"n\": 200, \"bleu\": 3.710297629249858, \"token_f1\": 0.24697489011283374, \"exact_match\": 0.0, \"entity_recovery\": 0.15136876006441224, \"gtr_cos_recovered_vs_true\": 0.5182216167449951}\n"}
+,{"stream_name":"stdout","time":5811.529706922,"data":"  (42.8 min)\n"}
+,{"stream_name":"stdout","time":5887.823706477,"data":"{\"name\": \"minivec2vec_pq128x8 | 20 steps\", \"n\": 200, \"bleu\": 1.5071724567769231, \"token_f1\": 0.17682688984615497, \"exact_match\": 0.0, \"entity_recovery\": 0.07246376811594203, \"gtr_cos_recovered_vs_true\": 0.36926665902137756}\n"}
+,{"stream_name":"stdout","time":5887.823747409,"data":"  (1.3 min)\n"}
+,{"stream_name":"stdout","time":6073.031328642,"data":"{\"name\": \"minivec2vec_pq128x8 | 50 steps\", \"n\": 200, \"bleu\": 1.4871067041195591, \"token_f1\": 0.17555321686061848, \"exact_match\": 0.0, \"entity_recovery\": 0.07568438003220612, \"gtr_cos_recovered_vs_true\": 0.36978158354759216}\n"}
+,{"stream_name":"stdout","time":6073.031403129,"data":"  (3.1 min)\n"}
+,{"stream_name":"stdout","time":8635.439506395,"data":"{\"name\": \"minivec2vec_pq128x8 | 50 steps + beam 4\", \"n\": 200, \"bleu\": 1.6598582899456749, \"token_f1\": 0.18835693882492005, \"exact_match\": 0.0, \"entity_recovery\": 0.09500805152979067, \"gtr_cos_recovered_vs_true\": 0.4093415439128876}\n"}
+,{"stream_name":"stdout","time":8635.439557938,"data":"  (42.7 min)\n"}
+,{"stream_name":"stdout","time":8711.63732701,"data":"{\"name\": \"supervised_mlp | 20 steps\", \"n\": 200, \"bleu\": 7.739213688559274, \"token_f1\": 0.39504183325207143, \"exact_match\": 0.0, \"entity_recovery\": 0.22705314009661837, \"gtr_cos_recovered_vs_true\": 0.6484419107437134}\n"}
+,{"stream_name":"stdout","time":8711.637374945,"data":"  (1.3 min)\n"}
+,{"stream_name":"stdout","time":8896.946729698,"data":"{\"name\": \"supervised_mlp | 50 steps\", \"n\": 200, \"bleu\": 7.735613025648511, \"token_f1\": 0.39350775577718805, \"exact_match\": 0.0, \"entity_recovery\": 0.25442834138486314, \"gtr_cos_recovered_vs_true\": 0.6428035497665405}\n"}
+,{"stream_name":"stdout","time":8896.946830384,"data":"  (3.1 min)\n"}
+,{"stream_name":"stdout","time":11467.106713838,"data":"{\"name\": \"supervised_mlp | 50 steps + beam 4\", \"n\": 200, \"bleu\": 9.493735723516261, \"token_f1\": 0.42166022740669545, \"exact_match\": 0.0, \"entity_recovery\": 0.2882447665056361, \"gtr_cos_recovered_vs_true\": 0.6970133781433105}\n"}
+,{"stream_name":"stdout","time":11467.106770627,"data":"  (42.8 min)\n"}
+,{"stream_name":"stdout","time":11467.106777699,"data":"config               20 steps  50 steps  50 steps + beam 4\n"}
+,{"stream_name":"stdout","time":11467.106782839,"data":"set                                                       \n"}
+,{"stream_name":"stdout","time":11467.106787892,"data":"minivec2vec_fp32        0.240     0.243              0.247\n"}
+,{"stream_name":"stdout","time":11467.106792814,"data":"minivec2vec_pq128x8     0.177     0.176              0.188\n"}
+,{"stream_name":"stdout","time":11467.106797325,"data":"supervised_mlp          0.395     0.394              0.422\n"}
+,{"stream_name":"stdout","time":11467.10680162,"data":"true_vectors            0.958     0.960              0.990\n"}
+,{"stream_name":"stdout","time":11467.490965121,"data":"['inversions_decoding.csv', 'phaseE2_decoding.png', 'results_E2.json']\n"}
+,{"stream_name":"stderr","time":11472.93075457,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":11472.930785943,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":11473.075729786,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":11473.075777929,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":11473.852762776,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":11473.975951817,"data":"[NbConvertApp] Writing 514964 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":11476.450694938,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":11477.004753972,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":11477.00479412,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":11477.005087107,"data":"[NbConvertApp] Writing 673244 bytes to __results__.html\n"}
+]

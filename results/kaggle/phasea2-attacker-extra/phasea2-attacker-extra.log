@@ -1,0 +1,63 @@
+[{"stream_name":"stderr","time":8.083491444,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.083547469,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.083552373,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.083555046,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.706037144,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.706085538,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.70609161,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.706095199,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":28.346916882,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":28.346956446,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":28.34696153,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":28.346970674,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":28.346974359,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":28.346977012,"data":"diffusers 0.42.0 requires huggingface-hub\u003c3.0,\u003e=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":37.898083936,"data":"\u001b[0mGPUs: 2 ['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":38.229295437,"data":"2.11.0+cu130 4.46.3\n"}
+,{"stream_name":"stdout","time":151.795094841,"data":"Dataset({\n"}
+,{"stream_name":"stdout","time":151.795140764,"data":"    features: ['text'],\n"}
+,{"stream_name":"stdout","time":151.795160606,"data":"    num_rows: 849508\n"}
+,{"stream_name":"stdout","time":151.7951657,"data":"})\n"}
+,{"stream_name":"stderr","time":182.170187963,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":182.170231678,"data":"I0000 00:00:1793808349.250337      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":182.374967964,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":182.375000672,"data":"I0000 00:00:1793808349.250337      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":182.375007356,"data":"\n"}
+,{"stream_name":"stderr","time":182.37501231,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":182.375017304,"data":"I0000 00:00:1793808349.250337      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":310.165597449,"data":"removed 727 passages that were in the victim/attacker sets of Phase A\n"}
+,{"stream_name":"stdout","time":497.42095333,"data":"example: 189). After CR 189, NY 168 turns eastward along a rural two-lane road through Stark, soon intersecting with\n"}
+,{"stream_name":"stdout","time":1320.127606687,"data":"L32: (200000, 768) in 800s\n"}
+,{"stream_name":"stdout","time":2186.545585691,"data":"L128: (200000, 768) in 867s\n"}
+,{"stream_name":"stderr","time":2191.165692257,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":2191.166497214,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2191.166515488,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":2191.166522845,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":2191.16652827,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":2191.166533021,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":2191.166538012,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":2191.166542939,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":2191.166548262,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":2191.16655263,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":2191.166557296,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":2191.166561959,"data":"Exception encountered at \"In [5]\":\n"}
+,{"stream_name":"stderr","time":2191.166566483,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":2191.166571182,"data":"AssertionError                            Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":2191.166576329,"data":"/tmp/ipykernel_23/1879581714.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":2191.16658175,"data":"      8     n_new, n_ref = np.linalg.norm(X, axis=1), np.linalg.norm(ref, axis=1)\n"}
+,{"stream_name":"stderr","time":2191.166587502,"data":"      9     checks[f\"norm_mean_new_vs_phaseA_L{L}\"] = [float(n_new.mean()), float(n_ref.mean())]\n"}
+,{"stream_name":"stderr","time":2191.166592775,"data":"---\u003e 10     assert abs(n_new.mean() / n_ref.mean() - 1) \u003c 0.05, \"norms differ: wrong GTR variant?\"\n"}
+,{"stream_name":"stderr","time":2191.16659722,"data":"     11     # (b) the same vector computed twice must match: re-embed 64 texts on GPU 0\n"}
+,{"stream_name":"stderr","time":2191.166601593,"data":"     12     again = embed_gtr(texts[f\"extra_p_L{L}\"][:64], encoders[devices[0]], devices[0], toks[devices[0]])\n"}
+,{"stream_name":"stderr","time":2191.166606599,"data":"\n"}
+,{"stream_name":"stderr","time":2191.166610632,"data":"AssertionError: norms differ: wrong GTR variant?\n"}
+,{"stream_name":"stderr","time":2191.166614875,"data":"\n"}
+,{"stream_name":"stderr","time":2193.419502661,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2193.419554276,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2193.588776773,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2193.588812661,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2194.413146529,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2194.51385362,"data":"[NbConvertApp] Writing 240918 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2197.047143401,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2197.63073055,"data":"[NbConvertApp] Writing 502964 bytes to __results__.html\n"}
+]

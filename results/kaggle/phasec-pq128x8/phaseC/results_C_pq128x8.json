@@ -1,0 +1,121 @@
+{
+ "control": {
+  "hist": {
+   "initial": {
+    "top1": 0.1341552734375,
+    "avg_rank": 179.8426513671875,
+    "mean_cos": 0.21076570451259613
+   },
+   "refine1": {
+    "top1": 0.9500732421875,
+    "avg_rank": 1.1668701171875,
+    "mean_cos": 0.4928956627845764
+   },
+   "self_consistency": 0.8176998496055603,
+   "refine2": {
+    "top1": 0.96044921875,
+    "avg_rank": 1.102783203125,
+    "mean_cos": 0.5109983682632446
+   }
+  },
+  "minutes": 3.560521372159322,
+  "paper_top1": 0.96
+ },
+ "runs": [
+  {
+   "scheme": "pq128x8",
+   "seed": 0,
+   "dim_victim": 1024,
+   "minutes": 13.094726888338725,
+   "initial": {
+    "top1": 0.0001220703125,
+    "avg_rank": 3610.337646484375,
+    "mean_cos": 0.01140153594315052
+   },
+   "refine1": {
+    "top1": 0.0001220703125,
+    "avg_rank": 4000.875732421875,
+    "mean_cos": 0.001998279010877013
+   },
+   "self_consistency": 0.4305955767631531,
+   "refine2": {
+    "top1": 0.0,
+    "avg_rank": 4002.694580078125,
+    "mean_cos": 0.0015635143499821424
+   }
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 1,
+   "dim_victim": 1024,
+   "minutes": 13.945307159423828,
+   "initial": {
+    "top1": 0.0001220703125,
+    "avg_rank": 3287.46533203125,
+    "mean_cos": 0.019123155623674393
+   },
+   "refine1": {
+    "top1": 0.0,
+    "avg_rank": 3985.3466796875,
+    "mean_cos": 0.001696841325610876
+   },
+   "self_consistency": 0.4251360297203064,
+   "refine2": {
+    "top1": 0.0,
+    "avg_rank": 3871.014892578125,
+    "mean_cos": 0.004606207367032766
+   }
+  },
+  {
+   "scheme": "pq128x8",
+   "seed": 2,
+   "dim_victim": 1024,
+   "minutes": 13.77287971576055,
+   "initial": {
+    "top1": 0.000244140625,
+    "avg_rank": 3278.248046875,
+    "mean_cos": 0.020380567759275436
+   },
+   "refine1": {
+    "top1": 0.0,
+    "avg_rank": 3788.4052734375,
+    "mean_cos": 0.008829778991639614
+   },
+   "self_consistency": 0.4300534427165985,
+   "refine2": {
+    "top1": 0.000244140625,
+    "avg_rank": 3607.8310546875,
+    "mean_cos": 0.014442039653658867
+   }
+  }
+ ],
+ "expected": {
+  "random guess": "top-1 = 1/8,192 = 0.00012, average rank = 4,096",
+  "control e5->gtr (paper Table 1)": "top-1 0.96, average rank 1.10, cosine 0.22 / 0.49 / 0.51 (initial / refine-1 / refine-2). GATE: ours must reach top-1 >= 0.85, else the notebook stops",
+  "fp32 BGE-large -> GTR": "unknown. The paper gets 0.96-0.99 for every pair into gtr, but with both sides from the same sentence pool. Our victim and attacker texts differ in style (A2b mixing 0.34-0.40 vs 0.5), and our map is 1024 -> 768. Call it WORKS if top-1 >= 0.5",
+  "int8, int4 vs fp32": "within 0.02 top-1 (decoded cosine 0.99997 / 0.992: almost the same vectors)",
+  "pq128x8 vs fp32": "lower; decoded cosine 0.90. Guess: 0.0-0.2 below fp32",
+  "binary vs fp32": "lower again; decoded cosine 0.79. Guess: 0.1-0.4 below fp32",
+  "svd256 vs fp32": "unknown: 256 -> 768 map, 89% of the energy kept",
+  "spread over 3 seeds": "small (paper: standard deviation mostly 0.00-0.01)",
+  "supervised linear (pairs) vs mini-vec2vec": "supervised >= unsupervised; supervised MLP >= supervised linear",
+  "attacker-set rule (fixed 3 Nov)": "if 200k scores within 0.02 top-1 of the same-source set on fp32, use 200k only"
+ },
+ "norm_B": 0.9373524785041809,
+ "phaseD_pick": {
+  "pq128x8": {
+   "seed": 0,
+   "picked_by": "highest self_consistency",
+   "top1": 0.0
+  }
+ },
+ "summary": [
+  {
+   "scheme": "pq128x8",
+   "top1_mean": 8.138020833333333e-05,
+   "top1_std": 0.0001409546555638735,
+   "rank_mean": 3827.18017578125,
+   "cos_mean": 0.006870587123557925
+  }
+ ]
+}

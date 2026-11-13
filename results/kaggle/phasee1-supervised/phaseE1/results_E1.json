@@ -1,0 +1,107 @@
+{
+ "n": 1000,
+ "expected": {
+  "procrustes (pairs)": "top-1 ~0.99, cosine ~0.57 (Phase C v1: 0.993 / 0.565)",
+  "mlp (pairs)": "top-1 ~0.99, cosine ~0.67 (Phase C v1: 0.993 / 0.670)",
+  "oracle_linear": "the highest cosine of the linear maps; guess 0.6-0.7",
+  "inversion": "token F1 above Phase D fp32 (0.238) but far below the true-vector control (0.957). Guess 0.25-0.40"
+ },
+ "maps": {
+  "procrustes": {
+   "translation": {
+    "top1": 0.9935302734375,
+    "avg_rank": 1.0078125,
+    "mean_cos": 0.5681599974632263
+   },
+   "inversion": {
+    "name": "procrustes",
+    "n": 1000,
+    "bleu": 3.3948468365290783,
+    "token_f1": 0.2801240635210923,
+    "exact_match": 0.0,
+    "entity_recovery": 0.17130073505912433,
+    "gtr_cos_recovered_vs_true": 0.5376839637756348,
+    "minutes": 6.586483252048493
+   }
+  },
+  "ridge": {
+   "translation": {
+    "top1": 0.993896484375,
+    "avg_rank": 1.0074462890625,
+    "mean_cos": 0.6653774380683899
+   },
+   "inversion": {
+    "name": "ridge",
+    "n": 1000,
+    "bleu": 9.538287994187398,
+    "token_f1": 0.39910817425189066,
+    "exact_match": 0.0,
+    "entity_recovery": 0.23841482901885586,
+    "gtr_cos_recovered_vs_true": 0.6548547148704529,
+    "minutes": 6.664970668156942
+   }
+  },
+  "oracle_linear": {
+   "translation": {
+    "top1": 0.9952392578125,
+    "avg_rank": 1.0050048828125,
+    "mean_cos": 0.6951953172683716
+   },
+   "inversion": {
+    "name": "oracle_linear",
+    "n": 1000,
+    "bleu": 11.395804015545897,
+    "token_f1": 0.4299830276366084,
+    "exact_match": 0.001,
+    "entity_recovery": 0.25727069351230425,
+    "gtr_cos_recovered_vs_true": 0.682937502861023,
+    "minutes": 6.684018095334371
+   }
+  },
+  "mlp": {
+   "translation": {
+    "top1": 0.9932861328125,
+    "avg_rank": 1.009765625,
+    "mean_cos": 0.6642210483551025
+   },
+   "inversion": {
+    "name": "mlp",
+    "n": 1000,
+    "bleu": 8.46358008680786,
+    "token_f1": 0.390850429563386,
+    "exact_match": 0.0,
+    "entity_recovery": 0.22690955576861618,
+    "gtr_cos_recovered_vs_true": 0.6515301465988159,
+    "minutes": 6.679124029477437
+   }
+  }
+ },
+ "phaseD_fp32": {
+  "name": "fp32",
+  "bleu": 2.7746739925634545,
+  "token_f1": 0.23792116265275395,
+  "token_f1_ci95": [
+   0.2309099245067451,
+   0.24521067360943605
+  ],
+  "exact_match": 0.0,
+  "entity_recovery": 0.13678491530840525,
+  "gtr_cos_recovered_vs_true": 0.47960302233695984,
+  "phaseC_top1_on_these_1000": 0.947,
+  "token_f1_when_hit": 0.2394262449301049,
+  "token_f1_when_miss": 0.21102846611216336,
+  "minutes": 5.950590721766154
+ },
+ "phaseD_positive_control": {
+  "name": "positive control",
+  "bleu": 85.52101493484679,
+  "token_f1": 0.9572118752094675,
+  "token_f1_ci95": [
+   0.9516981082458417,
+   0.9623510519341868
+  ],
+  "exact_match": 0.559,
+  "entity_recovery": 0.9063598593799936,
+  "gtr_cos_recovered_vs_true": 0.9910014867782593
+ }
+}

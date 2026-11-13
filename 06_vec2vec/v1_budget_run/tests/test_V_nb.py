@@ -1,0 +1,23 @@
+import nbformat, numpy as np, json, os, sys, shutil
+R = os.path.abspath('fkV'); rng = np.random.default_rng(0)
+def unit(X): return (X/np.linalg.norm(X,axis=1,keepdims=True)).astype(np.float32)
+Z = rng.normal(size=(250000,16)).astype(np.float32)
+np.save(f'{R}/input/a/bge-large_victim_L32.npy', unit(Z[:50000]@rng.normal(size=(16,1024)).astype(np.float32)))
+Pg = rng.normal(size=(16,768)).astype(np.float32)
+np.save(f'{R}/input/a/gtr_victim_L32.npy', Z[:50000]@Pg)
+np.save(f'{R}/input/a2/gtr_attextra_L32.npy', Z[50000:]@Pg)
+json.dump({'phase':'A_fp32_embeddings'}, open(f'{R}/input/a/manifest.json','w'))
+json.dump({'phase':'A2_attacker_extra'}, open(f'{R}/input/a2/manifest_A2.json','w'))
+shutil.copytree('../ext/vec2vec', f'{R}/working/vec2vec', dirs_exist_ok=True)
+nb = nbformat.read('phaseV_vec2vec_budget.ipynb', 4)
+cells = [c.source for c in nb.cells if c.cell_type == 'code'][1:]   # skip install cell
+fix = lambda s: s.replace('/kaggle/input', f'{R}/input').replace('/kaggle/working', f'{R}/working')
+g = {}
+c2 = fix(cells[0]).replace('BUDGET_HOURS = 10.5', 'BUDGET_HOURS = 0.005').replace('assert torch.cuda.is_available(), "Set Accelerator = GPU T4"', '')
+exec(c2, g)
+for c in cells[1:4]: exec(fix(c), g)
+c6 = fix(cells[4]).replace('budget_hours=BUDGET_HOURS, seed=SEED)', 'budget_hours=BUDGET_HOURS, seed=SEED, extra_args={"mixed_precision": "no"})')
+exec(c6, g)
+import matplotlib; matplotlib.use('Agg')
+exec(fix(cells[5]), g)
+print("NOTEBOOK FLOW OK")

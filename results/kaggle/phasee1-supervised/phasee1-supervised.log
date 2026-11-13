@@ -1,0 +1,69 @@
+[{"stream_name":"stderr","time":6.367703846,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.367757246,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.367762044,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.367764632,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.918250204,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.918276189,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.918281024,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.918285124,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":22.665988464,"data":"\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":22.666033562,"data":"litellm 1.93.2 requires tokenizers\u003c1.0,\u003e=0.21.0, but you have tokenizers 0.20.3 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":22.66604049,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":22.666045334,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":22.666049835,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\r\n"}
+,{"stream_name":"stdout","time":22.666054013,"data":"diffusers 0.42.0 requires huggingface-hub\u003c3.0,\u003e=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":30.966013914,"data":"\u001b[0m\u001b[31m  ERROR: HTTP error 504 while getting https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":30.96604806,"data":"\u001b[0m\u001b[31mERROR: Could not install requirement en-core-web-sm==3.8.0 from https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl because of HTTP error 504 Server Error: Gateway Time-out for url: https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl for URL https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":42.68040194,"data":"\u001b[0m- procrustes (pairs): top-1 ~0.99, cosine ~0.57 (Phase C v1: 0.993 / 0.565)\n"}
+,{"stream_name":"stdout","time":42.680444487,"data":"- mlp (pairs): top-1 ~0.99, cosine ~0.67 (Phase C v1: 0.993 / 0.670)\n"}
+,{"stream_name":"stdout","time":42.680450901,"data":"- oracle_linear: the highest cosine of the linear maps; guess 0.6-0.7\n"}
+,{"stream_name":"stdout","time":42.680455633,"data":"- inversion: token F1 above Phase D fp32 (0.238) but far below the true-vector control (0.957). Guess 0.25-0.40\n"}
+,{"stream_name":"stderr","time":63.210385923,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":63.210446173,"data":"I0000 00:00:1794131984.364533      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":63.412593197,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":63.412620986,"data":"I0000 00:00:1794131984.364533      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":63.412624632,"data":"\n"}
+,{"stream_name":"stderr","time":63.412626967,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":63.41262959,"data":"I0000 00:00:1794131984.364533      23 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stdout","time":139.781539145,"data":"procrustes {'top1': 0.9935302734375, 'avg_rank': 1.0078125, 'mean_cos': 0.5681599974632263}\n"}
+,{"stream_name":"stdout","time":140.728060691,"data":"ridge {'top1': 0.993896484375, 'avg_rank': 1.0074462890625, 'mean_cos': 0.6653774380683899}\n"}
+,{"stream_name":"stdout","time":141.735049349,"data":"oracle_linear {'top1': 0.9952392578125, 'avg_rank': 1.0050048828125, 'mean_cos': 0.6951953172683716}\n"}
+,{"stream_name":"stdout","time":142.442436845,"data":"mlp {'top1': 0.9932861328125, 'avg_rank': 1.009765625, 'mean_cos': 0.6642210483551025}\n"}
+,{"stream_name":"stdout","time":537.851047544,"data":"{\"name\": \"procrustes\", \"n\": 1000, \"bleu\": 3.3948468365290783, \"token_f1\": 0.2801240635210923, \"exact_match\": 0.0, \"entity_recovery\": 0.17130073505912433, \"gtr_cos_recovered_vs_true\": 0.5376839637756348}\n"}
+,{"stream_name":"stdout","time":537.851136116,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":537.851144252,"data":"   GOT : the Federal Army, the Old Continental Army was divided into 14 sections and six subordinate commanders, including Louis W. D. Sondloxy Plain\n"}
+,{"stream_name":"stdout","time":537.851150243,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":537.85115557,"data":"   GOT : a Savoy monastic named Fr. Bosniak gander gander gander gander (also s\n"}
+,{"stream_name":"stdout","time":937.749816063,"data":"{\"name\": \"ridge\", \"n\": 1000, \"bleu\": 9.538287994187398, \"token_f1\": 0.39910817425189066, \"exact_match\": 0.0, \"entity_recovery\": 0.23841482901885586, \"gtr_cos_recovered_vs_true\": 0.6548547148704529}\n"}
+,{"stream_name":"stdout","time":937.749863762,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":937.749871469,"data":"   GOT : Washington's 17th Army, composed of four divisions, Major-General William L. Bouth and Vice-Admiral Armstrong were first\n"}
+,{"stream_name":"stdout","time":937.749876764,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":937.74988127,"data":"   GOT : tefan Frádasn tefan Frádasn (also surnames tefan, dasn, or ;\n"}
+,{"stream_name":"stdout","time":1338.792887048,"data":"{\"name\": \"oracle_linear\", \"n\": 1000, \"bleu\": 11.395804015545897, \"token_f1\": 0.4299830276366084, \"exact_match\": 0.001, \"entity_recovery\": 0.25727069351230425, \"gtr_cos_recovered_vs_true\": 0.682937502861023}\n"}
+,{"stream_name":"stdout","time":1338.79292737,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":1338.792937893,"data":"   GOT : Washington Division of the Allied Front, the original seventeen Army was in command of Col. William A. Pilschel and Viceroy William B. Bentley\n"}
+,{"stream_name":"stdout","time":1338.792948868,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":1338.792951421,"data":"   GOT : Fryerac (name) Fryerac (also \"Bannon\", \"Baarten\", \"Baarten\", \"Baarten\n"}
+,{"stream_name":"stdout","time":1739.391223706,"data":"{\"name\": \"mlp\", \"n\": 1000, \"bleu\": 8.46358008680786, \"token_f1\": 0.390850429563386, \"exact_match\": 0.0, \"entity_recovery\": 0.22690955576861618, \"gtr_cos_recovered_vs_true\": 0.6515301465988159}\n"}
+,{"stream_name":"stdout","time":1739.391293573,"data":"   TRUE: Army of the Potomac The army originally consisted of fourteen divisions commanded by Edwin Sumner, William B. Franklin, Louis Blenk \n"}
+,{"stream_name":"stdout","time":1739.391303734,"data":"   GOT : Washington Administration, the 17th Division consisted of eight armies, commanded by Col. William Herbert Boseley and Francis Albenlund\n"}
+,{"stream_name":"stdout","time":1739.391310481,"data":"   TRUE: Balthazar (given name) Balthazar (also spelled Balthasar, Balthassar, \n"}
+,{"stream_name":"stdout","time":1739.391316984,"data":"   GOT : Bárdan Bárdan (also \"Badrin\", \"Saint Joseph\"; surnames: \"\n"}
+,{"stream_name":"stdout","time":1739.391323533,"data":"                             map   cos  token_f1   bleu  entities\n"}
+,{"stream_name":"stdout","time":1739.391328564,"data":"mini-vec2vec (Phase D, no pairs)   NaN     0.238  2.775     0.137\n"}
+,{"stream_name":"stdout","time":1739.391334284,"data":"                      procrustes 0.568     0.280  3.395     0.171\n"}
+,{"stream_name":"stdout","time":1739.391340002,"data":"                           ridge 0.665     0.399  9.538     0.238\n"}
+,{"stream_name":"stdout","time":1739.391346533,"data":"                   oracle_linear 0.695     0.430 11.396     0.257\n"}
+,{"stream_name":"stdout","time":1739.391352288,"data":"                             mlp 0.664     0.391  8.464     0.227\n"}
+,{"stream_name":"stdout","time":1739.774971676,"data":"['inversions_supervised.csv', 'phaseE1_supervised.png', 'results_E1.json', 'translated_eval_sup_mlp.npy', 'translated_eval_sup_oracle_linear.npy', 'translated_eval_sup_procrustes.npy', 'translated_eval_sup_ridge.npy']\n"}
+,{"stream_name":"stderr","time":1745.266134414,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1745.266190908,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1745.409454489,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1745.409490228,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1746.179876989,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1746.305165751,"data":"[NbConvertApp] Writing 516149 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1748.809427136,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1749.378347839,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":1749.378390909,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":1749.378677207,"data":"[NbConvertApp] Writing 697755 bytes to __results__.html\n"}
+]
