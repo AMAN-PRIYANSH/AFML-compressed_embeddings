@@ -1,0 +1,18 @@
+# Main pipeline (Phases A-E). Tested on Kaggle (Python 3.13, CUDA 12.8).
+# transformers is pinned because vec2text 0.0.13 breaks on newer versions.
+transformers==4.46.3
+vec2text==0.0.13
+sentence-transformers==3.4.1
+torch
+faiss-cpu
+numpy
+scipy
+scikit-learn
+pandas
+matplotlib
+datasets
+huggingface_hub
+sacrebleu
+spacy            # entity recovery uses en_core_web_sm 3.8.0
+# vec2vec (folder 06) uses the official repo's own environment:
+#   git clone https://github.com/rjha18/vec2vec && git -C vec2vec checkout 5efb3c0

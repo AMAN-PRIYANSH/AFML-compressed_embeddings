@@ -1,0 +1,17 @@
+# large data and checkpoints never go into git
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.zip
+/runs/
+/e3_out/
+_sandbox/
+__pycache__/
+.ipynb_checkpoints/
+# credentials
+kaggle.json
+.kaggle/
+rclone.conf
+.env
